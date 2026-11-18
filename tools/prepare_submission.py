@@ -18,6 +18,11 @@ def vector(name):
             return f'<g transform="translate({x} {y}) scale({sx} {sy})">'+''.join(map(convert,e))+'</g>'
         return ''.join(map(convert,e))
     return convert(ET.parse(ROOT/f'app/src/main/res/drawable/{name}.xml').getroot())
+# Submission artwork retains the approved symbol and fills all four corners.
+icon_svg=(ROOT/'production/icon/app_icon_v1.svg').read_text().replace('<rect x="8" y="8" width="240" height="240" rx="60"', '<rect x="0" y="0" width="256" height="256"')
+(OUT/'01-icon-source.svg').write_text(icon_svg)
+import subprocess
+subprocess.run(['node','--input-type=module','-e', '''import {Resvg} from "./production/tools/node_modules/@resvg/resvg-js/index.js"; import fs from "node:fs"; fs.writeFileSync("submission/v1.6/01-icon-1024.png",new Resvg(fs.readFileSync("submission/v1.6/01-icon-source.svg"),{fitTo:{mode:"width",value:1024}}).render().asPng());'''],cwd=ROOT,check=True)
 icon=base64.b64encode((OUT/'01-icon-1024.png').read_bytes()).decode()
 cards=[('ic_health_check','颈部感受自评',['六道问题，回顾近期感受','以图形与文字提供分组参考'],'六题自评','#F5F0E4'),('ic_training','颈椎挑战训练',['让高塔随姿态保持平衡','侧倾操控飞机，收集沿途星星'],'稳姿高塔 · 舒颈飞行','#F4E9DF'),('ic_routine','活动角度记录',['后仰与左右侧伸','查看当前角度与本次最大值'],'前方标尺 · 左右指针','#E9EEE2')]
 parts=[f'''<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="2560" height="1440" viewBox="0 0 2560 1440"><rect width="2560" height="1440" fill="#FAF7EF"/><circle cx="2460" cy="80" r="430" fill="#E5ECDC"/><circle cx="80" cy="1470" r="420" fill="#F0E2CF"/><g font-family="PingFang SC,Heiti SC,sans-serif" fill="#354B40"><image x="140" y="138" width="184" height="184" xlink:href="data:image/png;base64,{icon}"/><text x="382" y="266" font-size="120" font-weight="600">颈椎卫士</text><text x="140" y="423" font-size="52" fill="#557665">让每一次轻轻回正，都有清晰反馈</text><text x="2420" y="248" text-anchor="end" font-size="36" fill="#557665">PICO Spatial</text>''']
