@@ -1,0 +1,43 @@
+{
+  "sourceCommit": "a262fafe0d6290e03db877d35a745fd0cd3d139e",
+  "captureTarget": "PICO emulator emulator-5554",
+  "captureMode": "spatial FOV; original PNG",
+  "images": [
+    {
+      "file": "01-icon-1024.png",
+      "width": 1024,
+      "height": 1024,
+      "bytes": 37342,
+      "sha256": "335daf2ccd9729231cb80c69c9dd7d13ac543ecdebd4d40045982ed27d585946"
+    },
+    {
+      "file": "02-poster-2560x1440.png",
+      "width": 2560,
+      "height": 1440,
+      "bytes": 184108,
+      "sha256": "77f1fcdb930c6487a9fe705f1fac9fcb1a09fc69eece2cbdae81e5b8588086bf"
+    },
+    {
+      "file": "03-tower-placement.png",
+      "width": 2560,
+      "height": 1440,
+      "bytes": 2866347,
+      "sha256": "ca0f59a81ab26645561bb6e387d96a842aef6a5e0d1b35be532f5bfaa50a7b91"
+    },
+    {
+      "file": "05-flight-active.png",
+      "width": 2560,
+      "height": 1440,
+      "bytes": 2864419,
+      "sha256": "fc014aa3495be3b2fe6d3eb55cea09f45daaa51c8712c2ecc20c0e6646c2c642"
+    },
+    {
+      "file": "06-extension-active.png",
+      "width": 2560,
+      "height": 1440,
+      "bytes": 2859920,
+      "sha256": "6dbbeeb10fd1a96bc3cc53b0d60418912600e71a41992bd5c6295a5763bbe49a"
+    }
+  ],
+  "APK_SHA256": "6aa21935ba0e568d0a84ea9fc085817c8c85729ef9561dc6c18b9b1906f87f15"
+}
