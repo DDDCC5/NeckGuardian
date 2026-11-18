@@ -1,0 +1,282 @@
+[
+  {
+    "id": "splash",
+    "locale": "zh",
+    "title": "颈椎卫士",
+    "file": "ui/screens/zh/splash.png",
+    "width": 800,
+    "height": 600,
+    "role": "composition-reference-only",
+    "note": "Static appearance reference; render dynamic UI and text natively."
+  },
+  {
+    "id": "disclaimer",
+    "locale": "zh",
+    "title": "颈椎卫士",
+    "file": "ui/screens/zh/disclaimer.png",
+    "width": 800,
+    "height": 600,
+    "role": "composition-reference-only",
+    "note": "Static appearance reference; render dynamic UI and text natively."
+  },
+  {
+    "id": "home",
+    "locale": "zh",
+    "title": "颈椎卫士",
+    "file": "ui/screens/zh/home.png",
+    "width": 800,
+    "height": 600,
+    "role": "composition-reference-only",
+    "note": "Static appearance reference; render dynamic UI and text natively."
+  },
+  {
+    "id": "questionnaire",
+    "locale": "zh",
+    "title": "颈椎健康测试",
+    "file": "ui/screens/zh/questionnaire.png",
+    "width": 800,
+    "height": 600,
+    "role": "composition-reference-only",
+    "note": "Static appearance reference; render dynamic UI and text natively."
+  },
+  {
+    "id": "trainingSelect",
+    "locale": "zh",
+    "title": "颈椎训练挑战",
+    "file": "ui/screens/zh/trainingSelect.png",
+    "width": 800,
+    "height": 600,
+    "role": "composition-reference-only",
+    "note": "Static appearance reference; render dynamic UI and text natively."
+  },
+  {
+    "id": "blocksSetup",
+    "locale": "zh",
+    "title": "稳姿高塔 · 训练设置",
+    "file": "ui/screens/zh/blocksSetup.png",
+    "width": 800,
+    "height": 600,
+    "role": "composition-reference-only",
+    "note": "Static appearance reference; render dynamic UI and text natively."
+  },
+  {
+    "id": "planeSetup",
+    "locale": "zh",
+    "title": "舒颈飞行 · 训练设置",
+    "file": "ui/screens/zh/planeSetup.png",
+    "width": 800,
+    "height": 600,
+    "role": "composition-reference-only",
+    "note": "Static appearance reference; render dynamic UI and text natively."
+  },
+  {
+    "id": "blocks",
+    "locale": "zh",
+    "title": "稳姿高塔",
+    "file": "ui/screens/zh/blocks.png",
+    "width": 800,
+    "height": 600,
+    "role": "composition-reference-only",
+    "note": "Static appearance reference; render dynamic UI and text natively."
+  },
+  {
+    "id": "plane",
+    "locale": "zh",
+    "title": "舒颈飞行",
+    "file": "ui/screens/zh/plane.png",
+    "width": 800,
+    "height": 600,
+    "role": "composition-reference-only",
+    "note": "Static appearance reference; render dynamic UI and text natively."
+  },
+  {
+    "id": "extension",
+    "locale": "zh",
+    "title": "后仰角度测试",
+    "file": "ui/screens/zh/extension.png",
+    "width": 800,
+    "height": 600,
+    "role": "composition-reference-only",
+    "note": "Static appearance reference; render dynamic UI and text natively."
+  },
+  {
+    "id": "lateral",
+    "locale": "zh",
+    "title": "侧伸角度测试",
+    "file": "ui/screens/zh/lateral.png",
+    "width": 800,
+    "height": 600,
+    "role": "composition-reference-only",
+    "note": "Static appearance reference; render dynamic UI and text natively."
+  },
+  {
+    "id": "results",
+    "locale": "zh",
+    "title": "训练结果",
+    "file": "ui/screens/zh/results.png",
+    "width": 800,
+    "height": 600,
+    "role": "composition-reference-only",
+    "note": "Static appearance reference; render dynamic UI and text natively."
+  },
+  {
+    "id": "history",
+    "locale": "zh",
+    "title": "历史记录",
+    "file": "ui/screens/zh/history.png",
+    "width": 800,
+    "height": 600,
+    "role": "composition-reference-only",
+    "note": "Static appearance reference; render dynamic UI and text natively."
+  },
+  {
+    "id": "healthResult",
+    "locale": "zh",
+    "title": "自评结果",
+    "file": "ui/screens/zh/healthResult.png",
+    "width": 800,
+    "height": 600,
+    "role": "composition-reference-only",
+    "note": "Static appearance reference; render dynamic UI and text natively."
+  },
+  {
+    "id": "splash",
+    "locale": "en",
+    "title": "NeckGuardian",
+    "file": "ui/screens/en/splash.png",
+    "width": 800,
+    "height": 600,
+    "role": "composition-reference-only",
+    "note": "Static appearance reference; render dynamic UI and text natively."
+  },
+  {
+    "id": "disclaimer",
+    "locale": "en",
+    "title": "NeckGuardian",
+    "file": "ui/screens/en/disclaimer.png",
+    "width": 800,
+    "height": 600,
+    "role": "composition-reference-only",
+    "note": "Static appearance reference; render dynamic UI and text natively."
+  },
+  {
+    "id": "home",
+    "locale": "en",
+    "title": "NeckGuardian",
+    "file": "ui/screens/en/home.png",
+    "width": 800,
+    "height": 600,
+    "role": "composition-reference-only",
+    "note": "Static appearance reference; render dynamic UI and text natively."
+  },
+  {
+    "id": "questionnaire",
+    "locale": "en",
+    "title": "Neck self-check",
+    "file": "ui/screens/en/questionnaire.png",
+    "width": 800,
+    "height": 600,
+    "role": "composition-reference-only",
+    "note": "Static appearance reference; render dynamic UI and text natively."
+  },
+  {
+    "id": "trainingSelect",
+    "locale": "en",
+    "title": "Training challenges",
+    "file": "ui/screens/en/trainingSelect.png",
+    "width": 800,
+    "height": 600,
+    "role": "composition-reference-only",
+    "note": "Static appearance reference; render dynamic UI and text natively."
+  },
+  {
+    "id": "blocksSetup",
+    "locale": "en",
+    "title": "Posture Tower · Setup",
+    "file": "ui/screens/en/blocksSetup.png",
+    "width": 800,
+    "height": 600,
+    "role": "composition-reference-only",
+    "note": "Static appearance reference; render dynamic UI and text natively."
+  },
+  {
+    "id": "planeSetup",
+    "locale": "en",
+    "title": "Gentle Glide · Setup",
+    "file": "ui/screens/en/planeSetup.png",
+    "width": 800,
+    "height": 600,
+    "role": "composition-reference-only",
+    "note": "Static appearance reference; render dynamic UI and text natively."
+  },
+  {
+    "id": "blocks",
+    "locale": "en",
+    "title": "Posture Tower",
+    "file": "ui/screens/en/blocks.png",
+    "width": 800,
+    "height": 600,
+    "role": "composition-reference-only",
+    "note": "Static appearance reference; render dynamic UI and text natively."
+  },
+  {
+    "id": "plane",
+    "locale": "en",
+    "title": "Gentle Glide",
+    "file": "ui/screens/en/plane.png",
+    "width": 800,
+    "height": 600,
+    "role": "composition-reference-only",
+    "note": "Static appearance reference; render dynamic UI and text natively."
+  },
+  {
+    "id": "extension",
+    "locale": "en",
+    "title": "Neck extension check",
+    "file": "ui/screens/en/extension.png",
+    "width": 800,
+    "height": 600,
+    "role": "composition-reference-only",
+    "note": "Static appearance reference; render dynamic UI and text natively."
+  },
+  {
+    "id": "lateral",
+    "locale": "en",
+    "title": "Side-bending check",
+    "file": "ui/screens/en/lateral.png",
+    "width": 800,
+    "height": 600,
+    "role": "composition-reference-only",
+    "note": "Static appearance reference; render dynamic UI and text natively."
+  },
+  {
+    "id": "results",
+    "locale": "en",
+    "title": "Training results",
+    "file": "ui/screens/en/results.png",
+    "width": 800,
+    "height": 600,
+    "role": "composition-reference-only",
+    "note": "Static appearance reference; render dynamic UI and text natively."
+  },
+  {
+    "id": "history",
+    "locale": "en",
+    "title": "History",
+    "file": "ui/screens/en/history.png",
+    "width": 800,
+    "height": 600,
+    "role": "composition-reference-only",
+    "note": "Static appearance reference; render dynamic UI and text natively."
+  },
+  {
+    "id": "healthResult",
+    "locale": "en",
+    "title": "Self-check summary",
+    "file": "ui/screens/en/healthResult.png",
+    "width": 800,
+    "height": 600,
+    "role": "composition-reference-only",
+    "note": "Static appearance reference; render dynamic UI and text natively."
+  }
+]

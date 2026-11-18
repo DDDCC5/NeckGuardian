@@ -1,0 +1,1 @@
+{"name":"neckguardian-asset-tools","private":true,"type":"module","dependencies":{"three":"latest","@dimforge/rapier3d-compat":"latest","@resvg/resvg-js":"latest","gltf-validator":"latest"}}

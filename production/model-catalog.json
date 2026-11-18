@@ -1,0 +1,389 @@
+[
+  {
+    "id": "block_sage",
+    "label": "Rounded sage block",
+    "file": "models/block_sage.glb",
+    "bytes": 30256,
+    "triangles": 300,
+    "dimensionsMeters": [
+      0.07000000029802322,
+      0.03500000014901161,
+      0.04500000178813934
+    ],
+    "boundsMeters": {
+      "min": [
+        -0.03500000014901161,
+        -7.450580430390374e-11,
+        -0.02250000089406967
+      ],
+      "max": [
+        0.03500000014901161,
+        0.03500000007450581,
+        0.02250000089406967
+      ]
+    },
+    "meshNodes": [
+      "block_sage"
+    ],
+    "animations": [],
+    "pivot": "bottom center",
+    "collision": {
+      "type": "box",
+      "size": [
+        0.07,
+        0.035,
+        0.045
+      ],
+      "center": [
+        0,
+        0.0175,
+        0
+      ]
+    }
+  },
+  {
+    "id": "block_peach",
+    "label": "Rounded peach block",
+    "file": "models/block_peach.glb",
+    "bytes": 30260,
+    "triangles": 300,
+    "dimensionsMeters": [
+      0.07000000029802322,
+      0.03500000014901161,
+      0.04500000178813934
+    ],
+    "boundsMeters": {
+      "min": [
+        -0.03500000014901161,
+        -7.450580430390374e-11,
+        -0.02250000089406967
+      ],
+      "max": [
+        0.03500000014901161,
+        0.03500000007450581,
+        0.02250000089406967
+      ]
+    },
+    "meshNodes": [
+      "block_peach"
+    ],
+    "animations": [],
+    "pivot": "bottom center",
+    "collision": {
+      "type": "box",
+      "size": [
+        0.07,
+        0.035,
+        0.045
+      ],
+      "center": [
+        0,
+        0.0175,
+        0
+      ]
+    }
+  },
+  {
+    "id": "block_cream",
+    "label": "Rounded cream block",
+    "file": "models/block_cream.glb",
+    "bytes": 30256,
+    "triangles": 300,
+    "dimensionsMeters": [
+      0.07000000029802322,
+      0.03500000014901161,
+      0.04500000178813934
+    ],
+    "boundsMeters": {
+      "min": [
+        -0.03500000014901161,
+        -7.450580430390374e-11,
+        -0.02250000089406967
+      ],
+      "max": [
+        0.03500000014901161,
+        0.03500000007450581,
+        0.02250000089406967
+      ]
+    },
+    "meshNodes": [
+      "block_cream"
+    ],
+    "animations": [],
+    "pivot": "bottom center",
+    "collision": {
+      "type": "box",
+      "size": [
+        0.07,
+        0.035,
+        0.045
+      ],
+      "center": [
+        0,
+        0.0175,
+        0
+      ]
+    }
+  },
+  {
+    "id": "tabletop",
+    "label": "Virtual rounded tabletop",
+    "file": "models/tabletop.glb",
+    "bytes": 30244,
+    "triangles": 300,
+    "dimensionsMeters": [
+      0.8999999761581421,
+      0.017999999225139618,
+      0.4000000059604645
+    ],
+    "boundsMeters": {
+      "min": [
+        -0.44999998807907104,
+        -0.01799999961256981,
+        -0.20000000298023224
+      ],
+      "max": [
+        0.44999998807907104,
+        -3.8743019036002746e-10,
+        0.20000000298023224
+      ]
+    },
+    "meshNodes": [
+      "table_top"
+    ],
+    "animations": [],
+    "pivot": "top center",
+    "collision": {
+      "type": "box",
+      "size": [
+        0.9,
+        0.018,
+        0.4
+      ],
+      "center": [
+        0,
+        -0.009,
+        0
+      ]
+    }
+  },
+  {
+    "id": "posture_tower",
+    "label": "Six-block single-column tower",
+    "file": "models/posture_tower.glb",
+    "bytes": 240688,
+    "triangles": 2100,
+    "dimensionsMeters": [
+      0.8999999761581421,
+      0.22849999968707563,
+      0.4000000059604645
+    ],
+    "boundsMeters": {
+      "min": [
+        -0.44999998807907104,
+        -0.01799999961256981,
+        -0.20000000298023224
+      ],
+      "max": [
+        0.44999998807907104,
+        0.2105000000745058,
+        0.20000000298023224
+      ]
+    },
+    "meshNodes": [
+      "table_top",
+      "tower_block_01",
+      "tower_block_02",
+      "tower_block_03",
+      "tower_block_04",
+      "tower_block_05",
+      "tower_block_06"
+    ],
+    "animations": [
+      {
+        "name": "topple_physics",
+        "duration": 4,
+        "tracks": 12
+      }
+    ],
+    "pivot": "tabletop center",
+    "blockCount": 6,
+    "independentBlockNodes": [
+      "tower_block_01",
+      "tower_block_02",
+      "tower_block_03",
+      "tower_block_04",
+      "tower_block_05",
+      "tower_block_06"
+    ],
+    "collision": "Each block 0.07 × 0.035 × 0.045 m; table top y=0",
+    "animationSource": "Rapier 3D rigid-body simulation, 240 Hz bake sampled at 30 Hz",
+    "reset": "Stop animation and restore node transforms from the original GLB pose"
+  },
+  {
+    "id": "paper_plane",
+    "label": "Gentle Glide paper plane",
+    "file": "models/paper_plane.glb",
+    "bytes": 4148,
+    "triangles": 8,
+    "dimensionsMeters": [
+      0.2199999988079071,
+      0.03500000014901161,
+      0.255000002682209
+    ],
+    "boundsMeters": {
+      "min": [
+        -0.10999999940395355,
+        -0.02500000037252903,
+        -0.15000000596046448
+      ],
+      "max": [
+        0.10999999940395355,
+        0.009999999776482582,
+        0.10499999672174454
+      ]
+    },
+    "meshNodes": [
+      "wing_left",
+      "wing_right",
+      "fold_left",
+      "fold_right"
+    ],
+    "animations": [],
+    "pivot": "fold center",
+    "forwardAxis": "-Z",
+    "collision": {
+      "type": "box",
+      "size": [
+        0.22,
+        0.035,
+        0.255
+      ]
+    },
+    "doubleSidedPaper": true
+  },
+  {
+    "id": "star",
+    "label": "Soft emissive collectible star",
+    "file": "models/star.glb",
+    "bytes": 59100,
+    "triangles": 596,
+    "dimensionsMeters": [
+      0.043177489191293716,
+      0.04129013977944851,
+      0.0059999998193234205
+    ],
+    "boundsMeters": {
+      "min": [
+        -0.021588744595646858,
+        -0.01859039068222046,
+        -0.003000000026077032
+      ],
+      "max": [
+        0.021588744595646858,
+        0.02269974909722805,
+        0.0029999997932463884
+      ]
+    },
+    "meshNodes": [
+      "star_core"
+    ],
+    "animations": [],
+    "pivot": "center",
+    "collision": {
+      "type": "sphere",
+      "radius": 0.023
+    },
+    "glow": "Core emissive material is included; optional soft halo texture ui/star_halo.png is delivered separately. No post-processing extension required."
+  },
+  {
+    "id": "angle_meter",
+    "label": "Segmented extension angle meter",
+    "file": "models/angle_meter.glb",
+    "bytes": 417020,
+    "triangles": 4200,
+    "dimensionsMeters": [
+      0.07800000160932541,
+      0.3100000023841858,
+      0.015999999914318323
+    ],
+    "boundsMeters": {
+      "min": [
+        -0.039000000804662704,
+        -1.1920928966180355e-9,
+        -0.004999999888241291
+      ],
+      "max": [
+        0.039000000804662704,
+        0.3100000011920929,
+        0.011000000026077032
+      ]
+    },
+    "meshNodes": [
+      "meter_backing",
+      "meter_segment_00",
+      "meter_segment_05",
+      "meter_segment_10",
+      "meter_segment_15",
+      "meter_segment_20",
+      "meter_segment_25",
+      "meter_segment_30",
+      "meter_segment_35",
+      "meter_segment_40",
+      "meter_segment_45",
+      "meter_segment_50",
+      "meter_segment_55",
+      "meter_segment_60"
+    ],
+    "animations": [],
+    "pivot": "bottom center",
+    "segments": 13,
+    "stepDegrees": 5,
+    "rangeDegrees": [
+      0,
+      60
+    ],
+    "runtime": "Change segment materials independently; current degree text remains native UI."
+  },
+  {
+    "id": "rudder_gauge",
+    "label": "Pivoted side-bending gauge",
+    "file": "models/rudder_gauge.glb",
+    "bytes": 270656,
+    "triangles": 3520,
+    "dimensionsMeters": [
+      0.25600001215934753,
+      0.14100000634789467,
+      0.02000000056996942
+    ],
+    "boundsMeters": {
+      "min": [
+        -0.12800000607967377,
+        -0.013000000268220903,
+        -0.00800000037997961
+      ],
+      "max": [
+        0.12800000607967377,
+        0.12800000607967377,
+        0.012000000189989809
+      ]
+    },
+    "meshNodes": [
+      "dial_arc",
+      "dial_tick_0",
+      "dial_tick_1",
+      "dial_tick_2",
+      "dial_tick_3",
+      "dial_tick_4",
+      "dial_tick_5",
+      "dial_tick_6",
+      "dial_needle",
+      "dial_hub"
+    ],
+    "animations": [],
+    "pivot": "dial center",
+    "needleNode": "needle_pivot",
+    "rotationAxis": "local Z",
+    "rangeDisplay": "Left/right calibrated roll; illustrative tick labels delivered as vector UI"
+  }
+]

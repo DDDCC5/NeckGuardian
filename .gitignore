@@ -1,0 +1,49 @@
+# Build outputs and local tool configuration
+.gradle/
+.kotlin/
+**/build/
+local.properties
+.idea/
+*.iml
+.DS_Store
+*.log
+*.hprof
+.externalNativeBuild/
+.cxx/
+captures/
+
+# Private/local agent data, device evidence and caches
+.agents/
+.pico/
+.pico-env.json
+.scratch/
+AGENTS.md
+PICO-SPATIAL-AGENTIC-TOOLS.AGENTS.md
+docs/superpowers/
+docs/pico-shared-space-head-pose-blocker.md
+
+# Delivery binaries and historical local screenshots are published selectively as Release assets
+delivery/
+release/
+
+# Asset generation environments / old revisions
+**/node_modules/
+**/voice-env/
+**/__pycache__/
+production/archive/
+production/evidence/
+production/audio/samples-male/
+production/audio/**/*.mp3
+production/male-voice-samples.json
+*.zip
+*.apk
+
+# Credentials and signing material
+.env
+.env.*
+*.jks
+*.keystore
+google-services.json
+output.json
+
+production/tools/audio-tmp/

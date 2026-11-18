@@ -1,0 +1,199 @@
+[
+  {
+    "id": "card_health",
+    "svg": "ui/card_health.svg",
+    "png": "ui/card_health.png",
+    "width": 512,
+    "height": 320,
+    "role": "runtime-component",
+    "transparent": true
+  },
+  {
+    "id": "card_tower",
+    "svg": "ui/card_tower.svg",
+    "png": "ui/card_tower.png",
+    "width": 512,
+    "height": 320,
+    "role": "runtime-component",
+    "transparent": true
+  },
+  {
+    "id": "card_flight",
+    "svg": "ui/card_flight.svg",
+    "png": "ui/card_flight.png",
+    "width": 512,
+    "height": 320,
+    "role": "runtime-component",
+    "transparent": true
+  },
+  {
+    "id": "button_primary",
+    "svg": "ui/button_primary.svg",
+    "png": "ui/button_primary.png",
+    "width": 320,
+    "height": 64,
+    "role": "runtime-component",
+    "transparent": true
+  },
+  {
+    "id": "button_primary_hover",
+    "svg": "ui/button_primary_hover.svg",
+    "png": "ui/button_primary_hover.png",
+    "width": 320,
+    "height": 64,
+    "role": "runtime-component",
+    "transparent": true
+  },
+  {
+    "id": "button_primary_pressed",
+    "svg": "ui/button_primary_pressed.svg",
+    "png": "ui/button_primary_pressed.png",
+    "width": 320,
+    "height": 64,
+    "role": "runtime-component",
+    "transparent": true
+  },
+  {
+    "id": "button_primary_disabled",
+    "svg": "ui/button_primary_disabled.svg",
+    "png": "ui/button_primary_disabled.png",
+    "width": 320,
+    "height": 64,
+    "role": "runtime-component",
+    "transparent": true
+  },
+  {
+    "id": "button_secondary",
+    "svg": "ui/button_secondary.svg",
+    "png": "ui/button_secondary.png",
+    "width": 320,
+    "height": 64,
+    "role": "runtime-component",
+    "transparent": true
+  },
+  {
+    "id": "radio_unselected",
+    "svg": "ui/radio_unselected.svg",
+    "png": "ui/radio_unselected.png",
+    "width": 32,
+    "height": 32,
+    "role": "runtime-component",
+    "transparent": true
+  },
+  {
+    "id": "radio_selected",
+    "svg": "ui/radio_selected.svg",
+    "png": "ui/radio_selected.png",
+    "width": 32,
+    "height": 32,
+    "role": "runtime-component",
+    "transparent": true
+  },
+  {
+    "id": "progress_track",
+    "svg": "ui/progress_track.svg",
+    "png": "ui/progress_track.png",
+    "width": 640,
+    "height": 12,
+    "role": "runtime-component",
+    "transparent": true
+  },
+  {
+    "id": "progress_fill",
+    "svg": "ui/progress_fill.svg",
+    "png": "ui/progress_fill.png",
+    "width": 640,
+    "height": 12,
+    "role": "runtime-component",
+    "transparent": true
+  },
+  {
+    "id": "meter_segment_inactive",
+    "svg": "ui/meter_segment_inactive.svg",
+    "png": "ui/meter_segment_inactive.png",
+    "width": 96,
+    "height": 32,
+    "role": "runtime-component",
+    "transparent": true
+  },
+  {
+    "id": "meter_segment_active",
+    "svg": "ui/meter_segment_active.svg",
+    "png": "ui/meter_segment_active.png",
+    "width": 96,
+    "height": 32,
+    "role": "runtime-component",
+    "transparent": true
+  },
+  {
+    "id": "rudder_needle",
+    "svg": "ui/rudder_needle.svg",
+    "png": "ui/rudder_needle.png",
+    "width": 32,
+    "height": 200,
+    "role": "runtime-component",
+    "transparent": true
+  },
+  {
+    "id": "star_halo",
+    "svg": "ui/star_halo.svg",
+    "png": "ui/star_halo.png",
+    "width": 256,
+    "height": 256,
+    "role": "runtime-component",
+    "transparent": true
+  },
+  {
+    "id": "badge_success",
+    "svg": "ui/badge_success.svg",
+    "png": "ui/badge_success.png",
+    "width": 128,
+    "height": 128,
+    "role": "runtime-component",
+    "transparent": true
+  },
+  {
+    "id": "badge_ended",
+    "svg": "ui/badge_ended.svg",
+    "png": "ui/badge_ended.png",
+    "width": 128,
+    "height": 128,
+    "role": "runtime-component",
+    "transparent": true
+  },
+  {
+    "id": "module_health",
+    "svg": "ui/module_health.svg",
+    "png": "ui/module_health.png",
+    "role": "runtime-illustration",
+    "transparent": true
+  },
+  {
+    "id": "module_tower",
+    "svg": "ui/module_tower.svg",
+    "png": "ui/module_tower.png",
+    "role": "runtime-illustration",
+    "transparent": true
+  },
+  {
+    "id": "module_flight",
+    "svg": "ui/module_flight.svg",
+    "png": "ui/module_flight.png",
+    "role": "runtime-illustration",
+    "transparent": true
+  },
+  {
+    "id": "history_empty",
+    "svg": "ui/history_empty.svg",
+    "png": "ui/history_empty.png",
+    "role": "runtime-illustration",
+    "transparent": true
+  },
+  {
+    "id": "module_movement",
+    "svg": "ui/module_movement.svg",
+    "png": "ui/module_movement.png",
+    "role": "runtime-illustration",
+    "transparent": true
+  }
+]

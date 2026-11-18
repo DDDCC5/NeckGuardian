@@ -1,0 +1,47 @@
+{
+  "name": "NeckGuardian warm sage",
+  "colors": {
+    "primary": "#557665",
+    "onPrimary": "#FFFAF0",
+    "healthCard": "#F5F0E4",
+    "towerCard": "#F4E9DF",
+    "flightCard": "#E9EEE2",
+    "angleActive": "#9FB596",
+    "angleInactive": "#DBDFD0",
+    "needle": "#B88F63"
+  },
+  "radiiDp": {
+    "nativeWindow": 32,
+    "moduleCard": 20,
+    "option": 16,
+    "button": "SpatialUI default capsule"
+  },
+  "spacingDp": [
+    8,
+    12,
+    16,
+    24,
+    32
+  ],
+  "localization": {
+    "zh": "颈椎卫士",
+    "default": "NeckGuardian",
+    "mixedLanguageUI": false
+  },
+  "nativeRestoration": "Use SpatialUI within PicoTheme. Do not replace system window material with a flattened screenshot. Keep text, choices, counters and measurements as live native components.",
+  "screenImages": "Composition reference only; never use them as the tappable application interface.",
+  "typography": {
+    "pageTitle": "titleLarge / 20sp",
+    "moduleTitle": "titleMedium / 16sp",
+    "body": "bodyMedium / 14sp",
+    "metadata": "bodySmall / 12sp",
+    "metric": "titleLarge / 20sp",
+    "button": "labelLarge / 14sp"
+  },
+  "iconSizesDp": {
+    "brand": 28,
+    "module": 64,
+    "selection": 72
+  },
+  "iconSources": "production/ui/icons/*.xml; Android native24-unit vector resources"
+}
