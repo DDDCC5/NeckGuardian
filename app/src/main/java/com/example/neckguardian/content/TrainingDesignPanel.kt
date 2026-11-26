@@ -1,6 +1,9 @@
 package com.example.neckguardian.content
 
+import androidx.compose.foundation.Image
+import androidx.compose.ui.res.painterResource
 import androidx.compose.foundation.background
+import com.example.neckguardian.R
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.Composable
@@ -17,10 +20,18 @@ import kotlin.math.*
 fun TrainingDesignPanel(s:GuardianState,kind:String,failed:Boolean,onLeave:()->Unit) {
     s.tick
     // design-style: design-surface training-world-controls
-    Column(Modifier.size(800.dp,600.dp).background(GuardianColors.health,RoundedCornerShape(28.dp)).padding(24.dp),verticalArrangement=Arrangement.spacedBy(12.dp)) {
+    Column(Modifier.size(800.dp,600.dp).padding(16.dp),verticalArrangement=Arrangement.spacedBy(12.dp)) {
+      // design-style: design-surface warm-training-hud
+      Column(Modifier.fillMaxWidth().background(GuardianColors.health,RoundedCornerShape(24.dp)).padding(20.dp),verticalArrangement=Arrangement.spacedBy(12.dp)) {
+        Row(verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(12.dp)) {
+        Image(painterResource(when(kind){"tower"->R.drawable.ic_tower;"flight"->R.drawable.ic_glide;"extension"->R.drawable.ic_extension;else->R.drawable.ic_lateral}),null,Modifier.size(36.dp))
+        Column(verticalArrangement=Arrangement.spacedBy(4.dp)) {
         Text(when(kind){"tower"->s.text("稳姿高塔","Posture Tower");"flight"->s.text("舒颈飞行","Gentle Glide");"extension"->s.text("后仰角度测试","Neck extension check");else->s.text("侧伸角度测试","Side bend check")},style=PicoTheme.typography.titleLarge,color=GuardianColors.ink,fontWeight=FontWeight.Bold)
         Text(when(kind){"tower"->s.text("舒适坐稳，轻轻回正","Sit comfortably and gently return upright");"flight"->s.text("缓慢侧倾，沿着星光飞行","Lean slowly and follow the stars");"extension"->s.text("先笔直坐稳，再缓慢向后仰头","Sit upright, then slowly look upward");else->s.text("保持肩部放松，缓慢向左或向右侧倾","Relax your shoulders and slowly bend to either side")},color=GuardianColors.ink)
-        if(kind!="lateral") TrainingStats(s,kind)
+        }
+        }
+        TrainingStats(s,kind)
+      }
         // The 3D model sits in front of this region, never behind the metric cards or actions.
         Box(Modifier.weight(1f).fillMaxWidth(),contentAlignment=Alignment.BottomCenter) {
             val hint=when {
@@ -34,25 +45,26 @@ fun TrainingDesignPanel(s:GuardianState,kind:String,failed:Boolean,onLeave:()->U
                 kind=="flight" -> s.text("慢慢向左或向右，保持动作舒适","Move slowly left or right and stay comfortable")
                 else -> s.text("如有不适，请停止；刻度不代表目标角度。","Stop if you feel discomfort. The scale is not a target.")
             }
+            if(kind=="flight" && s.active) Box(Modifier.align(Alignment.Center).offset(y=(-24).dp)) {CollectionFeedback(s)}
             if(kind=="extension") {
                 Column(Modifier.align(Alignment.Center).offset(x=60.dp).height(240.dp),verticalArrangement=Arrangement.SpaceBetween) {
                     listOf("60°","45°","30°","15°","0°").forEach { Text(it,color=GuardianColors.sageText) }
                 }
             }
-            Text(hint,style=PicoTheme.typography.bodySmall,color=GuardianColors.sageText)
+            // design-style: design-surface warm-training-hint
+            Box(Modifier.fillMaxWidth().background(GuardianColors.health,RoundedCornerShape(16.dp)).padding(12.dp),contentAlignment=Alignment.Center) {
+                Text(hint,style=PicoTheme.typography.bodySmall,color=GuardianColors.ink)
+            }
             if(kind=="flight" && s.active && s.showQuickStop) {
                 Box(Modifier.align(Alignment.TopCenter).padding(top=12.dp)) {
                     DesignStageButton(s.text("停止飞行","Stop flight"),true,{s.finish()})
                 }
             }
         }
-        if(kind=="lateral") TrainingStats(s,kind)
-        if(kind=="tower") Row(Modifier.fillMaxWidth(),horizontalArrangement=Arrangement.SpaceBetween) {
-            Text(s.text("角度上限","Angle limit"),color=GuardianColors.ink)
-            Text("${s.limit}°",color=GuardianColors.ink)
-        }
         if(s.message.isNotBlank()) Text(s.message,color=GuardianColors.ink)
-        Row(Modifier.fillMaxWidth(),verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(12.dp)) {
+        // design-style: design-surface warm-training-actions
+        Row(Modifier.fillMaxWidth().background(GuardianColors.health,RoundedCornerShape(24.dp)).padding(12.dp),verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(12.dp)) {
+            if(kind=="tower") Text(s.text("角度上限 ${s.limit}°","Limit ${s.limit}°"),style=PicoTheme.typography.bodySmall,color=GuardianColors.ink)
             Spacer(Modifier.weight(1f))
             if(!s.active && s.countdown==0 && s.topper==0.0) {
                 DesignStageButton(s.text("返回选择","Back to selection"),false,{s.nav(if(kind in listOf("tower","flight")) "trainingSelect" else "movementSelect");onLeave()})
@@ -77,8 +89,7 @@ private fun TrainingStats(s:GuardianState,kind:String) {
     }
     Row(Modifier.fillMaxWidth(),horizontalArrangement=Arrangement.spacedBy(16.dp)) {
         stats.forEach { (label,value) ->
-            // design-style: design-surface training-stat-card
-            Column(Modifier.weight(1f).height(84.dp).background(GuardianColors.onPrimary,RoundedCornerShape(18.dp)).padding(12.dp),horizontalAlignment=Alignment.CenterHorizontally,verticalArrangement=Arrangement.spacedBy(6.dp,Alignment.CenterVertically)) {
+            Column(Modifier.weight(1f).heightIn(min=62.dp).padding(horizontal=4.dp),horizontalAlignment=Alignment.CenterHorizontally,verticalArrangement=Arrangement.spacedBy(6.dp,Alignment.CenterVertically)) {
                 Text(label,style=PicoTheme.typography.bodySmall,color=GuardianColors.ink)
                 Text(value,color=GuardianColors.sageText,style=PicoTheme.typography.titleLarge,fontWeight=FontWeight.Bold)
             }

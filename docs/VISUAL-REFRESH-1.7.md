@@ -1,0 +1,13 @@
+# 1.7 warm wood / paper visual refresh
+
+Implementation candidate approved for APK and Web-preview delivery on 2026-11-24; real-headset acceptance is pending.
+
+The Mixed Stage retains its tracking, scale and placement rules. TrainingDesignPanel now separates the bounded warm HUD/action surfaces from its transparent model opening. WarmVisuals owns non-interactive completion, stability and collection graphics. Tower stability decoration follows the tower placement root; aircraft wake follows FlightPath.planeX in world meters. Collection feedback observes existing collected counts and does not write score.
+
+Original production/models GLBs remain unchanged. production/tools/polish-materials.mjs produces models/polished material variants, preserving original binary geometry and animation tracks and embedding a small vector-authored grain texture. PICO Editor was available but local import accepts USDZ only; its documentation service also failed. Changing the approved GLB hierarchy/animation through a format round trip was avoided. Variants pass glTF validation with zero errors/warnings.
+
+Built-in controls remain com.pico.spatial.ui.design Button/Text/TitleBar, with PicoTheme at both native window and Stage attachment roots. Native ColorScheme roles remain unchanged. Warm content uses the existing app-owned colors in GuardianColors (creamCard/primary/sageText/selected/ink/onPrimary, warning #A36E40). DefaultWindowContainer retains system material; no background was added to its root. The Stage's new bounded HUD, hint and footer own their fills; central structure and visual attachments are transparent. Built-in buttons retain hover/disabled behavior. Custom ring and collection emphasis use the approved20sp metric baseline. No new custom click or hover treatment was introduced.
+
+Build,22JVM tests, API/style/placement checks, source accessibility audit and APK signature verification pass. Current local emulator firmware blocks SDK6.2.8 execution and lacks the runtime A11Y/spatial screenshot extensions; no successful native runtime/visual acceptance is claimed. Creator selected APK+Web preview now and headset validation later. The previously reported tester crash remains unproven because its supplied log lacked a crash stack.
+
+On2026-11-24, the delivered1.7/code8 APK was replace-installed on the connected PICO headset and launched. The process stayed alive and the15-second crash watcher detected no crash. This is a startup smoke check, not full visual, gesture, movement-accuracy or prolonged-performance acceptance. The prior external tester crash report still lacks its exception stack and is not declared fixed.

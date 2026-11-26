@@ -6,7 +6,7 @@
 
 **仅作健康参考，不构成医疗诊断或治疗建议。出现不适请停止练习，必要时就医。**
 
-[下载 1.6 APK 与投稿资料](https://github.com/DDDCC5/NeckGuardian/releases/tag/v1.6) · [投稿填写指南](submission/v1.6/00-填写指南.md) · [验证范围](docs/VERIFICATION.md)
+[下载 1.7 APK 与交互预览](https://github.com/DDDCC5/NeckGuardian/releases/tag/v1.7) · [1.7 版本说明](docs/releases/1.7.md) · [原投稿资料](submission/v1.6/00-填写指南.md) · [验证范围](docs/VERIFICATION.md)
 
 ## 功能
 
@@ -20,7 +20,7 @@
 
 ## 构建与运行
 
-当前版本：`1.6`，`versionCode 7`，包名 `com.example.neckguardian`。目标为支持 PICO Spatial 的 PICO OS 6 / ARM64 设备；普通 Android 手机不具备相应空间运行服务。
+当前版本：`1.7`，`versionCode 8`，包名 `com.example.neckguardian`。目标为支持 PICO Spatial 的 PICO OS 6 / ARM64 设备；普通 Android 手机不具备相应空间运行服务。
 
 依赖：JDK 21、Android SDK 35、Build Tools 35.0.0。工程使用 Gradle 8.13、AGP 8.13.2、Kotlin 2.1.20、PICO Spatial SDK BOM 6.2.8。配置 `ANDROID_HOME` 或本机 `local.properties` 后：
 

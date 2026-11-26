@@ -44,6 +44,7 @@ class GuardianSceneController(val s:GuardianState,val kind:String,val root:Entit
     val blocks=mutableListOf<Entity>()
     var demonstrationModel:Entity?=null
     var plane:Entity?=null
+    var wake:Entity?=null
     var needle:Entity?=null
     val segments=mutableListOf<Entity>()
     val starModels=mutableListOf<Entity>()
@@ -72,6 +73,7 @@ class GuardianSceneController(val s:GuardianState,val kind:String,val root:Entit
                 val z=FlightPath.planeZ.toFloat()
                 plane?.transform()?.setScaleVector(Vector3(FlightPath.planeScale.toFloat()))
                 plane?.transform()?.setPosition(Vector3(x.toFloat(),0f,z))
+                wake?.transform()?.setPosition(Vector3(x.toFloat(),-.012f,z+.10f))
                 plane?.transform()?.setEulerAngles(EulerAngles(pitch=15f,yaw=FlightPath.planeYaw,roll=(-s.pose.roll*.35).coerceIn(-12.0,12.0).toFloat()))
                 starModels.forEachIndexed { i,e ->
                     val st=s.stars.getOrNull(i)
@@ -162,7 +164,7 @@ fun ScenePanel(s:GuardianState,kind:String,modifier:Modifier) {
                     val motion=context.assets.open("models/tower_motion.json").bufferedReader().use {JSONObject(it.readText())}
                     val driver=GuardianSceneController(s,kind,fittedSceneRoot,motion)
                     val file=when(kind) {"tower"->"posture_tower";"flight"->"paper_plane";"extension"->"angle_meter";else->"rudder_gauge"}
-                    val model=Entity.loadSuspend("asset://models/$file.glb")
+                    val model=Entity.loadSuspend("asset://models/${if(kind in listOf("tower","flight")) "polished/" else ""}$file.glb")
                     fittedSceneRoot.addChild(model)
                     driver.demonstrationModel=model
                     if(kind=="tower") model.findEntity("table_top")?.enabled=false

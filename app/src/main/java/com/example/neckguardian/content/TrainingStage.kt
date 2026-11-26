@@ -14,6 +14,7 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver
 import androidx.lifecycle.compose.LocalLifecycleOwner
+import com.example.neckguardian.domain.FlightPath
 import com.example.neckguardian.domain.oneDecimal
 import com.pico.spatial.core.container.SpatialViewContent
 import com.pico.spatial.core.ecs.*
@@ -138,7 +139,7 @@ fun TrainingStage(s:GuardianState) {
                 val motion=context.assets.open("models/tower_motion.json").bufferedReader().use{JSONObject(it.readText())}
                 val driver=GuardianSceneController(s,kind,placedSceneRoot,motion,world=true)
                 val file=when(kind){"tower"->"posture_tower";"flight"->"paper_plane";"extension"->"angle_meter";else->"rudder_gauge"}
-                val model=Entity.loadSuspend("asset://models/$file.glb");placedSceneRoot.addChild(model)
+                val model=Entity.loadSuspend("asset://models/${if(kind in listOf("tower","flight")) "polished/" else ""}$file.glb");placedSceneRoot.addChild(model)
                 if(kind=="extension") model.transform().setScaleVector(Vector3(.8f))
                 when(kind) {
                     "tower" -> {
@@ -155,6 +156,24 @@ fun TrainingStage(s:GuardianState) {
                         }
                     }
                     "lateral" -> driver.needle=requireNotNull(model.findEntity("needle_pivot"))
+                }
+                if(kind=="tower") attachments.entity("training.stability")?.let { halo ->
+                    halo.components.set(AccessibilityComponent(label="高塔稳定提示", value="").apply { isAccessibilityElement=false })
+                    content.setAccessibilityActions(entity=halo,semanticId="training.world.halo") {}
+                    halo.components[AccessibilityComponent::class.java]?.label=s.text("高塔稳定提示","Tower stability decoration")
+                    placedSceneRoot.addChild(halo)
+                    halo.transform().setPosition(Vector3(0f,.001f,0f))
+                    halo.transform().setEulerAngles(EulerAngles(pitch=-90f))
+                    halo.transform().setScaleVector(Vector3(.8f))
+                }
+                if(kind=="flight") attachments.entity("training.wake")?.let { wake ->
+                    wake.components.set(AccessibilityComponent(label="纸飞机航迹", value="").apply { isAccessibilityElement=false })
+                    content.setAccessibilityActions(entity=wake,semanticId="training.world.wake") {}
+                    wake.components[AccessibilityComponent::class.java]?.label=s.text("纸飞机航迹","Aircraft wake decoration")
+                    placedSceneRoot.addChild(wake)
+                    driver.wake=wake
+                    wake.transform().setPosition(Vector3(0f,-.012f,FlightPath.planeZ.toFloat()+.10f))
+                    wake.transform().setEulerAngles(EulerAngles(pitch=-90f))
                 }
                 placementOwner.components.set(SceneDriverComponent(driver))
                 val controls = attachments.entity("training.controls")
@@ -205,6 +224,8 @@ fun TrainingStage(s:GuardianState) {
             }
         },
         attachments={
+            if(kind=="tower") AttachmentPanel(id="training.stability") { StabilityHalo(s) }
+            if(kind=="flight") AttachmentPanel(id="training.wake") { FlightWake() }
             AttachmentPanel(id="training.controls") {
                 PicoTheme {
                   GuardianTypography { TrainingDesignPanel(s,kind,failed,::leaveTraining) }

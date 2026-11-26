@@ -51,6 +51,7 @@ object GuardianColors {
     val selectedText=Color(0xFF365B42) // design-style: fixed-figma-color .scratch/design-spec.json selectedText
     val sageText=Color(0xFF527360) // design-style: fixed-figma-color .scratch/design-spec.json sageText
     val note=Color(0xFFEEE4CC) // design-style: fixed-figma-color .scratch/design-spec.json note
+    val warning=Color(0xFFA36E40) // design-style: fixed-figma-color .scratch/design-spec.json warning
     val resultMark=Color(0xFFDFE8D8) // design-style: fixed-figma-color .scratch/design-spec.json resultMark
     val historyGreen=Color(0xFF9FB299) // design-style: fixed-figma-color .scratch/design-spec.json historyGreen
     val historyPeach=Color(0xFFD7AA8C) // design-style: fixed-figma-color .scratch/design-spec.json historyPeach
@@ -230,7 +231,10 @@ private fun Setup(s:GuardianState,modifier:Modifier,onEnterStage:()->Unit) {
     if(kind=="tower") { TowerSetup(s,modifier,onEnterStage);return }
     Column(modifier,verticalArrangement=Arrangement.spacedBy(12.dp)) {
         Row(Modifier.weight(1f),horizontalArrangement=Arrangement.spacedBy(16.dp)) {
-            Column(Modifier.weight(1f).fillMaxHeight().verticalScroll(rememberScrollState()),verticalArrangement=Arrangement.spacedBy(16.dp)) {
+            // design-style: design-surface warm-setup-instructions
+            Column(Modifier.weight(1f).fillMaxHeight().background(GuardianColors.health,RoundedCornerShape(24.dp)).padding(20.dp).verticalScroll(rememberScrollState()),verticalArrangement=Arrangement.spacedBy(16.dp)) {
+                Image(painterResource(if(kind=="flight") R.drawable.ic_glide else if(kind=="extension") R.drawable.ic_extension else R.drawable.ic_lateral),null,Modifier.size(48.dp))
+                Text(s.text("轻缓开始，保持舒适","Begin gently. Stay comfortable."),style=PicoTheme.typography.titleMedium,fontWeight=FontWeight.Bold,color=GuardianColors.ink)
                 if(kind=="flight") {
                     Text(s.text("坐稳并放松肩膀。轻轻向左或右侧倾，保持约半秒来转向。","Sit comfortably and relax your shoulders. Gently lean left or right and hold for half a second to steer."))
                     Text(s.text("收集星星；快速抬头可显示停止按钮，也可随时点击下方停止。","Collect stars. A quick upward movement reveals Stop; the standard Stop button is always available."))
@@ -262,7 +266,8 @@ private fun SetupActions(s:GuardianState,kind:String,onEnter:()->Unit) {
 private fun TowerSetup(s:GuardianState,modifier:Modifier,onEnterStage:()->Unit) {
     Column(modifier.fillMaxWidth(),verticalArrangement=Arrangement.spacedBy(12.dp)) {
         Column(Modifier.weight(1f).verticalScroll(rememberScrollState()),verticalArrangement=Arrangement.spacedBy(12.dp)) {
-            Row(Modifier.fillMaxWidth().height(120.dp),verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(16.dp)) {
+            // design-style: design-surface warm-tower-setup
+            Row(Modifier.fillMaxWidth().height(140.dp).background(GuardianColors.health,RoundedCornerShape(24.dp)).padding(16.dp),verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(16.dp)) {
                 Column(Modifier.weight(1f),verticalArrangement=Arrangement.spacedBy(8.dp)) {
                     Text(s.text("稳稳堆叠，轻轻回正","Keep the tower balanced"),style=PicoTheme.typography.titleMedium,fontWeight=FontWeight.Bold)
                     Text(s.text("高塔随低头角度倾斜，回正后恢复。","The tower leans as you look down and restores when you return upright."),style=PicoTheme.typography.bodySmall,color=PicoTheme.colorScheme.labelSecondary)
@@ -346,8 +351,15 @@ private fun ResultMark(health:Boolean,band:Int?) {
 @Composable
 private fun ResultPanel(s:GuardianState,r:SessionRecord,modifier:Modifier) {
     val health=r.kind=="health"
-    Column(modifier.fillMaxWidth().verticalScroll(rememberScrollState()).padding(top=16.dp),horizontalAlignment=Alignment.CenterHorizontally,verticalArrangement=Arrangement.spacedBy(16.dp)) {
-        ResultMark(health,r.metrics["band"]?.toInt())
+    // design-style: design-surface warm-result-surface
+    Column(modifier.fillMaxWidth().verticalScroll(rememberScrollState()).padding(horizontal=16.dp,vertical=8.dp).then(if(!health) Modifier.background(GuardianColors.health,RoundedCornerShape(24.dp)).padding(16.dp) else Modifier),horizontalAlignment=Alignment.CenterHorizontally,verticalArrangement=Arrangement.spacedBy(12.dp)) {
+        val completion=when(r.kind) {
+            "flight"->r.metrics["completion"]?.takeIf {(r.metrics["resolved"]?:0.0)>0}
+            "tower"->r.metrics["completion"]
+            else->null
+        }
+        if(!health && r.kind in listOf("tower","flight")) CompletionRing(completion,s.text("完成率","Completion rate"),if(r.kind=="tower") R.drawable.ic_tower else R.drawable.ic_glide)
+        else ResultMark(health,r.metrics["band"]?.toInt())
         // Approved result-title/risk-label hierarchy from production/ui/screens/zh.
         Text(if(health) healthLabel(s,r) else s.text("本次${title(r.kind,true)}已结束","${title(r.kind,false)} ended"),style=PicoTheme.typography.titleLarge,fontWeight=FontWeight.Bold,textAlign=TextAlign.Center)
         if(health) {
@@ -359,7 +371,8 @@ private fun ResultPanel(s:GuardianState,r:SessionRecord,modifier:Modifier) {
             Text(s.text("如有颈椎不适或疼痛，请及时就医。","If you have neck discomfort or pain, seek medical care promptly."),color=PicoTheme.colorScheme.labelSecondary,style=PicoTheme.typography.bodyMedium,textAlign=TextAlign.Center)
             PrimaryAction(s.text("返回主菜单","Return home"),"result.home") {s.nav("home")}
         } else {
-            val metrics=resultMetrics(s,r)
+            Text(if(r.status=="tracking_lost") s.text("追踪中断，先休息一下","Tracking was lost. Take a moment to rest.") else s.text("放松一下肩颈，让舒适延续","Relax your shoulders and carry that ease with you."),style=PicoTheme.typography.bodyMedium,color=GuardianColors.sageText,textAlign=TextAlign.Center)
+            val metrics=if(r.kind=="flight") listOf(s.text("训练时长","Duration") to clock(r.metrics["duration"]?:0.0))+resultMetrics(s,r).take(2) else resultMetrics(s,r)
             Row(Modifier.fillMaxWidth(),horizontalArrangement=Arrangement.spacedBy(16.dp)) {
                 // design-style: design-surface result-average
                 MetricCard(metrics[0],Modifier.weight(1f).background(PicoTheme.colorScheme.fillSecondary,RoundedCornerShape(18.dp)))
@@ -369,11 +382,12 @@ private fun ResultPanel(s:GuardianState,r:SessionRecord,modifier:Modifier) {
                 if(metrics.size>2) MetricCard(metrics[2],Modifier.weight(1f).background(PicoTheme.colorScheme.fillSecondary,RoundedCornerShape(18.dp)))
             }
             val duration=clock(r.metrics["duration"]?:0.0)
-            if(r.kind in listOf("tower","flight")) Text(if(r.kind=="tower") s.text("$duration / ${s.minutes} 分钟","$duration / ${s.minutes} min") else s.text("本次时长 $duration","Session duration $duration"),style=PicoTheme.typography.bodyMedium)
+            if(r.kind=="tower") Text(if(r.kind=="tower") s.text("$duration / ${s.minutes} 分钟","$duration / ${s.minutes} min") else s.text("本次时长 $duration","Session duration $duration"),style=PicoTheme.typography.bodyMedium)
             Row(horizontalArrangement=Arrangement.spacedBy(8.dp)) {
                 SecondaryAction(s.text("查看历史","View history"),"result.history") {s.nav("history")}
                 PrimaryAction(s.text("返回主菜单","Return home"),"result.home") {s.nav("home")}
             }
+            Note(s)
         }
     }
 }
