@@ -6,7 +6,7 @@
 
 **仅作健康参考，不构成医疗诊断或治疗建议。出现不适请停止练习，必要时就医。**
 
-[下载 1.7 APK 与交互预览](https://github.com/DDDCC5/NeckGuardian/releases/tag/v1.7) · [1.7 版本说明](docs/releases/1.7.md) · [原投稿资料](submission/v1.6/00-填写指南.md) · [验证范围](docs/VERIFICATION.md)
+[下载 1.8.1 APK 体验版](https://github.com/DDDCC5/NeckGuardian/releases/tag/v1.8.1) · [1.8.1 版本说明](docs/releases/1.8.1.md) · [原投稿资料](submission/v1.6/00-填写指南.md) · [验证范围](docs/VERIFICATION.md)
 
 ## 功能
 
@@ -14,13 +14,14 @@
 - 稳姿高塔：设置低头角度、挑战时长和宽容时间，回正恢复，持续超限后倾倒。
 - 舒颈飞行：保持侧倾来转向，收集星星；统计收集、错过、完成率和时长。
 - 常规测试：前方角度条和指针显示后仰/侧伸，记录舒适范围内的最大角度。
+- 舒颈飞行可选真实空间或林间/湖畔/书房三维环境，支持可选环境音与语音自动压低背景声。
 - 最近 30 条本地历史、简体中文/英文随系统切换、专业男声讲解与操作提示。
 
-菜单与自评使用原生窗口。需要真实角度的训练进入透视 Full Space；期间其他应用退到后台，结束后返回窗口。Shared Space 不提供真实头姿，应用不宣称后台跨应用姿态监测。
+菜单与自评使用原生窗口。真实空间训练进入透视 Full Space，虚拟环境使用 Full Space 三维场景；期间其他应用退到后台，结束后返回窗口。Shared Space 不提供真实头姿，应用不宣称后台跨应用姿态监测。
 
 ## 构建与运行
 
-当前版本：`1.7`，`versionCode 8`，包名 `com.example.neckguardian`。目标为支持 PICO Spatial 的 PICO OS 6 / ARM64 设备；普通 Android 手机不具备相应空间运行服务。
+当前版本：`1.8.1`，`versionCode 10`，包名 `com.example.neckguardian`。目标为支持 PICO Spatial 的 PICO OS 6 / ARM64 设备；普通 Android 手机不具备相应空间运行服务。
 
 依赖：JDK 21、Android SDK 35、Build Tools 35.0.0。工程使用 Gradle 8.13、AGP 8.13.2、Kotlin 2.1.20、PICO Spatial SDK BOM 6.2.8。配置 `ANDROID_HOME` 或本机 `local.properties` 后：
 

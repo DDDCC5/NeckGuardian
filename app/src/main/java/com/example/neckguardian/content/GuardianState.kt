@@ -14,6 +14,25 @@ class GuardianState(context:Context) {
     val pose=PoseSource(context)
     val audio=Guidance(context)
     val history=HistoryStore(context)
+    private val environmentPreferences=EnvironmentPreferences(context)
+    var environmentSettings by mutableStateOf(environmentPreferences.read()); private set
+    var stageEnvironment by mutableStateOf(TrainingEnvironment.REAL); private set
+    private var stageAmbientPath:String?=null
+    fun chooseEnvironment(value:TrainingEnvironment) {
+        if(inStage) return
+        environmentSettings=environmentSettings.copy(environment=value)
+        environmentPreferences.write(environmentSettings)
+    }
+    fun chooseAmbience(enabled:Boolean) {
+        if(inStage) return
+        environmentSettings=environmentSettings.copy(ambienceEnabled=enabled)
+        environmentPreferences.write(environmentSettings)
+    }
+    fun prepareEnvironment(kind:String) {
+        stageEnvironment=environmentSettings.environmentFor(kind)
+        stageAmbientPath=environmentSettings.ambientPath(kind)
+    }
+    fun startAmbience() {audio.startAmbience(stageAmbientPath)}
     var inStage by mutableStateOf(false)
     var stageKind by mutableStateOf("tower")
     var modelReady by mutableStateOf(false)
@@ -44,7 +63,7 @@ class GuardianState(context:Context) {
     private var warned=false
     fun explain(kind:String) {if(kind in listOf("tower","flight","extension","lateral")) audio.speak("intro_$kind",zh)}
     fun nav(target:String) {
-        audio.stopVoice();audio.effect("button_click");message="";sceneError=false;page=target
+        audio.stopAmbience();audio.stopVoice();audio.effect("button_click");message="";sceneError=false;page=target
         if(target in listOf("towerSetup","flightSetup","extensionSetup","lateralSetup")) explain(target.removeSuffix("Setup"))
     }
     fun text(cn:String,en:String)=if(zh) cn else en

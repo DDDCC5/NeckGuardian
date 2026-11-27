@@ -1,0 +1,35 @@
+{
+  "status": "candidate-awaiting-visual-and-listening-review",
+  "appVersionUnchanged": "1.7",
+  "images": [
+    {
+      "id": "forest",
+      "file": "forest.png",
+      "width": 1774,
+      "height": 887,
+      "aspectRatio": "2:1",
+      "sha256": "3b47111810425ed241ce3d33e267e5805f5e1153d3624692265b57e116792f7f",
+      "finalHeadsetQualityAccepted": false
+    },
+    {
+      "id": "lake",
+      "file": "lake.png",
+      "width": 1774,
+      "height": 887,
+      "aspectRatio": "2:1",
+      "sha256": "24a5f98464e8e6a5693bb151cd2bc51eb5ad1103ffa5ad836476e013b3c2a647",
+      "finalHeadsetQualityAccepted": false
+    },
+    {
+      "id": "study",
+      "file": "study.png",
+      "width": 1774,
+      "height": 887,
+      "aspectRatio": "2:1",
+      "sha256": "6745d3256ab3ff6b032ccace82de07fe3b3eded15224e998e2965a30315e854b",
+      "finalHeadsetQualityAccepted": false
+    }
+  ],
+  "audioValidation": "audio-validation.json",
+  "scope": "Gentle Glide only; no Android implementation in this phase"
+}

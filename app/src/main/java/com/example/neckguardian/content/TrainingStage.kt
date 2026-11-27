@@ -32,7 +32,7 @@ import kotlinx.coroutines.*
 import org.json.JSONObject
 import kotlin.math.*
 
-/** Mixed Stage: no skybox, real room remains visible, placement uses real HMD pose. */
+/** Focused Stage: real-pose content with either passthrough or the chosen modeled flight environment. */
 private class StageSceneHandles {
     var owner: Entity? = null
     var placed: Entity? = null
@@ -40,6 +40,7 @@ private class StageSceneHandles {
     var dragEvents: Int = 0
     var panel: Entity? = null
     var content: SpatialViewContent? = null
+    var environment: TrainingEnvironmentScene? = null
 }
 
 @Composable
@@ -59,6 +60,7 @@ fun TrainingStage(s:GuardianState) {
         if (returning) { return }
         returning = true
         scope.launch {
+            s.audio.stopAmbience()
             navigator.restoreWindowContainer("NeckGuardianWindow")
             s.inStage=false
             navigator.closeStage()
@@ -69,7 +71,7 @@ fun TrainingStage(s:GuardianState) {
         val observer=LifecycleEventObserver { _,e ->
             if(e==Lifecycle.Event.ON_STOP && !returning) {
                 if(s.active || s.countdown>0) s.finish("background")
-                s.pose.stop()
+                s.pose.stop();s.audio.stop()
             }
             if(e==Lifecycle.Event.ON_START) s.pose.start()
         }
@@ -77,12 +79,13 @@ fun TrainingStage(s:GuardianState) {
         onDispose {
             lifecycle.lifecycle.removeObserver(observer)
             if(s.active || s.countdown>0) s.finish("background")
-            s.inStage=false;s.pose.stop()
-            handles.owner?.destroy();handles.owner=null;s.modelReady=false
+            s.inStage=false;s.pose.stop();s.audio.stopAmbience()
+            handles.owner?.destroy();handles.owner=null;handles.environment?.close();handles.environment=null;s.modelReady=false
         }
     }
-    LaunchedEffect(s.pose.available) {
-        if(s.pose.available) {
+    LaunchedEffect(s.pose.available,s.modelReady) {
+        if(s.pose.available && s.modelReady) {
+            s.startAmbience()
             repeat(3) {
                 val hidden=navigator.minimizeWindowContainer("NeckGuardianWindow")
                 Log.i("NeckGuardian", "Stage-ready minimize result=$hidden")
@@ -136,6 +139,7 @@ fun TrainingStage(s:GuardianState) {
             val placementOwner=Entity();val placedSceneRoot=Entity()
             placementOwner.addChild(placedSceneRoot);handles.owner=placementOwner
             try {
+                handles.environment=createTrainingEnvironment(s.stageEnvironment,placementOwner)
                 val motion=context.assets.open("models/tower_motion.json").bufferedReader().use{JSONObject(it.readText())}
                 val driver=GuardianSceneController(s,kind,placedSceneRoot,motion,world=true)
                 val file=when(kind){"tower"->"posture_tower";"flight"->"paper_plane";"extension"->"angle_meter";else->"rudder_gauge"}
@@ -196,9 +200,9 @@ fun TrainingStage(s:GuardianState) {
                 content.addEntity(placementOwner)
                 Log.i("NeckGuardian", "Visible owner kind=$kind mesh=${visibleMesh.components[ModelComponent::class.java]!=null} bounds=${visibleMesh.getVisualBounds(placementOwner)}")
                 handles.placed=placedSceneRoot;s.modelReady=true
-                Log.i("NeckGuardian","Mixed Stage loaded kind=$kind nativeScale=1 tabletopHidden=${kind=="tower"}")
+                Log.i("NeckGuardian","Stage loaded kind=$kind environment=${s.stageEnvironment.id} nativeScale=1 tabletopHidden=${kind=="tower"}")
             } catch(e:Exception) {
-                if(handles.owner == placementOwner){placementOwner.destroy();handles.owner=null}
+                if(handles.owner == placementOwner){placementOwner.destroy();handles.owner=null;handles.environment?.close();handles.environment=null}
                 if(e is CancellationException) throw e
                 failed=true;s.sceneError=true
                 s.message=s.text("场景加载失败，请重新进入训练空间。","Scene loading failed. Please enter the training space again.")
@@ -216,6 +220,16 @@ fun TrainingStage(s:GuardianState) {
                 val target=s.pose.position+yaw.rotateVector(Vector3(0f,vertical,distance))
                 root.transform().setPosition(origin.convertPositionFrom(target,null))
                 root.transform().setQuaternion(origin.convertRotationFrom(yaw,null))
+                if(handles.environment!=null) {
+                    run {
+                        // Exported scene eye=(0,1.25,1.8)m, deck top Y≈0, forward −Z.
+                        // Map that eye to the calibrated HMD once; physical leaning keeps parallax.
+                        val sceneOrigin=s.pose.position-yaw.rotateVector(Vector3(0f,1.25f,1.8f))
+                        handles.environment?.entity?.transform()?.setPosition(origin.convertPositionFrom(sceneOrigin,null))
+                    }
+                    handles.environment?.entity?.transform()?.setQuaternion(origin.convertRotationFrom(yaw,null))
+                    handles.environment?.entity?.components?.get(StageEnvironmentLightingComponent::class.java)?.rotation=yaw
+                }
                 val controls=s.pose.position+yaw.rotateVector(Vector3(0f,0f,-1.2f))
                 handles.panel?.transform()?.setPosition(origin.convertPositionFrom(controls,null))
                 handles.panel?.transform()?.setQuaternion(origin.convertRotationFrom(yaw,null))

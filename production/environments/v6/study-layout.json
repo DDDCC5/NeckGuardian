@@ -1,0 +1,156 @@
+{
+  "theme": "study",
+  "source": "production/environments/v6/study-v6.glb",
+  "units": "meters",
+  "authoredEye": [
+    0,
+    1.25,
+    1.8
+  ],
+  "boundsOwner": "exported scene root",
+  "corridor": {
+    "min": [
+      -0.8,
+      0.5,
+      -3.5
+    ],
+    "max": [
+      0.8,
+      2.2,
+      2.2
+    ]
+  },
+  "selectedPropAabbClear": true,
+  "meshInstances": 256,
+  "instancedTriangles": 46800,
+  "materialCount": 20,
+  "leafMaterialsRequireCutout": false,
+  "leafGeometry": {
+    "sourceSha256": "730d30ebc004bc1374ed70928006fb0485b04f35ef1ccc69ff1223e08c53d1f1",
+    "leafGridPrimitives": 1,
+    "uniqueMeshLeaves": 920,
+    "contourRows": 7,
+    "alphaCutoutRequired": false,
+    "rasterBytesChanged": false
+  },
+  "objects": [
+    {
+      "name": "ForestTree",
+      "min": [
+        -10.522526514305026,
+        -0.23499999999999988,
+        -14.503390624905839
+      ],
+      "max": [
+        -3.330549433426295,
+        5.265,
+        -7.217384971372424
+      ],
+      "intersectsTrainingCorridor": false
+    },
+    {
+      "name": "ForestTree",
+      "min": [
+        4.733977639159595,
+        -0.23500000000000032,
+        -15.355695381432968
+      ],
+      "max": [
+        11.613917190713536,
+        5.465000000000001,
+        -8.603710832444667
+      ],
+      "intersectsTrainingCorridor": false
+    },
+    {
+      "name": "OakBookshelf",
+      "min": [
+        -4.069999999552965,
+        4.768371586472142e-8,
+        -2.5850000001490114
+      ],
+      "max": [
+        -3.6300000011920925,
+        2.349999952316284,
+        -0.6149999998509885
+      ],
+      "intersectsTrainingCorridor": false
+    },
+    {
+      "name": "WritingDesk",
+      "min": [
+        1.9,
+        -1.4305114759416426e-8,
+        -1.5499999880790711
+      ],
+      "max": [
+        3.9,
+        1.3349999967217445,
+        -0.650000011920929
+      ],
+      "intersectsTrainingCorridor": false
+    },
+    {
+      "name": "DeskChair",
+      "min": [
+        2.6150000035762786,
+        -2.980232227667301e-9,
+        0.07999998927116392
+      ],
+      "max": [
+        3.1849999964237212,
+        1.0199999904632568,
+        0.620000010728836
+      ],
+      "intersectsTrainingCorridor": false
+    },
+    {
+      "name": "ReadingSofa",
+      "min": [
+        -1.9099999982118607,
+        -7.450580569168253e-10,
+        3.800000011920929
+      ],
+      "max": [
+        0.8099999982118606,
+        0.9050000059604645,
+        4.70500000089407
+      ],
+      "intersectsTrainingCorridor": false
+    },
+    {
+      "name": "IndoorPlant",
+      "min": [
+        -3.980000004172325,
+        -2.980232227667301e-9,
+        -4.030000004172325
+      ],
+      "max": [
+        -3.519999995827675,
+        0.9898281026916811,
+        -3.5699999958276747
+      ],
+      "intersectsTrainingCorridor": false
+    },
+    {
+      "name": "IndoorPlant",
+      "min": [
+        3.519999995827675,
+        -2.980232227667301e-9,
+        -4.030000004172325
+      ],
+      "max": [
+        3.980000004172325,
+        0.9692654613021295,
+        -3.5699999958276747
+      ],
+      "intersectsTrainingCorridor": false
+    }
+  ],
+  "nativeVisualVerified": false,
+  "limitations": [
+    "Source transformed AABBs only; not native getVisualBounds or collision acceptance.",
+    "Terrain, floor, sky, paths and ground cover are excluded from selected-prop corridor audit.",
+    "No headset FPS or visual acceptance established."
+  ]
+}

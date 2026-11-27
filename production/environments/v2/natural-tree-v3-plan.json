@@ -1,0 +1,65 @@
+{
+  "command": [
+    "tripo",
+    "make",
+    "production/environments/v2/references/natural-thin-leaf-tree-v3.png",
+    "--model",
+    "tripo-v3.1",
+    "-p",
+    "face_limit=20000",
+    "-p",
+    "geometry_quality=detailed",
+    "-p",
+    "texture_quality=detailed",
+    "-p",
+    "smart_low_poly=true",
+    "--out",
+    "production/environments/v2/models/natural-tree-v3",
+    "--name",
+    "neckguardian-natural-tree-v3",
+    "--no-open",
+    "--json"
+  ],
+  "plan": {
+    "dry_run": true,
+    "valid": true,
+    "input": "production/environments/v2/references/natural-thin-leaf-tree-v3.png",
+    "model": "v3.1-20260211",
+    "model_reason": "explicit --model",
+    "steps": [
+      {
+        "name": "image-to-model",
+        "endpoint": "/v3/generation/image-to-model",
+        "task_type": "image_to_model",
+        "payload": {
+          "input": "<upload:production/environments/v2/references/natural-thin-leaf-tree-v3.png>",
+          "face_limit": 20000,
+          "geometry_quality": "detailed",
+          "texture_quality": "detailed",
+          "smart_low_poly": true,
+          "pbr": false,
+          "model": "v3.1-20260211"
+        }
+      }
+    ],
+    "pending_uploads": [
+      "production/environments/v2/references/natural-thin-leaf-tree-v3.png"
+    ],
+    "deliverables": [
+      "GLB"
+    ],
+    "candidates": 1,
+    "warnings": [],
+    "errors": [],
+    "generation_credits_estimate": 70,
+    "cost_notes": [
+      "estimated generation cost: 70 credits (official list price)",
+      "texture_quality detailed: higher price tier",
+      "geometry detailed (Ultra): extra HD credit"
+    ]
+  },
+  "status": "completed_needs_foliage_rework",
+  "authorization": "User confirmed on2026-11-27: 这个可以, in direct response to approved reference plus70-credit single-sample proposal.",
+  "taskId": "1e29b9f5-7970-4b85-b42c-947a6cc8e239",
+  "creditsConsumed": 70
+}

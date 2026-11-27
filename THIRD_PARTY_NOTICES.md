@@ -8,3 +8,5 @@
 - Button, warning, star-collection, success/end and block-topple effects were synthesized for this project; they are not third-party field recordings.
 
 No permissive open-source license is granted for the project as a whole by this notice. Publishing this repository makes the source available for review; dependency licenses do not automatically license the application or third-party speech services.
+
+- Training environments (1.8.1): tree trunks/branches derive from user-approved Tripo generations, with locally rebuilt twigs and leaf geometry. Ground/leaf imagery was generated for this project with built-in image generation. Structural scenery, grass, ferns and study furniture were authored locally with Three.js and custom GLB tooling. Ambient tracks were synthesized locally, not recorded in a private location. Provider terms continue to apply to Tripo outputs; no broader license is implied. See `docs/ENVIRONMENTS.md`.

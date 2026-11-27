@@ -50,3 +50,11 @@ production/tools/audio-tmp/
 
 # Standalone material editor workspace, not app source.
 editor-asset/
+
+# Local Tripo context and transient provider download receipts
+.tripo/
+production/environments/v2/runs/
+production/environments/v2/models/**/task.json
+
+# Private development diary (contains target identifiers and local diagnostics).
+docs/ENVIRONMENTS-1.8-WIP.md

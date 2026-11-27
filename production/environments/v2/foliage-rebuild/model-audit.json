@@ -1,0 +1,145 @@
+{
+  "source": "production/environments/v2/foliage-rebuild/natural-tree-thin-foliage-v4.glb",
+  "sha256": "fe997efeb19be48e931f4653fcd249d204d8f230b0e7d6485539798457dbc601",
+  "bytes": 8247208,
+  "meshCount": 3,
+  "primitiveCount": 3,
+  "triangleCount": 30490,
+  "vertices": 65397,
+  "materialCount": 3,
+  "images": [
+    {
+      "index": 0,
+      "mimeType": "image/jpeg",
+      "embedded": true,
+      "externalUri": false,
+      "width": 4096,
+      "height": 4096,
+      "encoding": "JPEG"
+    },
+    {
+      "index": 1,
+      "mimeType": "image/png",
+      "embedded": true,
+      "externalUri": false,
+      "width": 1024,
+      "height": 1536,
+      "encoding": "PNG"
+    }
+  ],
+  "externalResources": [],
+  "materials": [
+    {
+      "name": "tripo_material_1e29b9f5-7970-4b85-b42c-947a6cc8e239",
+      "alphaMode": "OPAQUE",
+      "doubleSided": true,
+      "hasBaseColorTexture": true,
+      "hasNormalTexture": false
+    },
+    {
+      "name": "NaturalThinLeaves",
+      "alphaMode": "MASK",
+      "doubleSided": true,
+      "hasBaseColorTexture": true,
+      "hasNormalTexture": false
+    },
+    {
+      "name": "ConnectedLeafTwigs",
+      "alphaMode": "OPAQUE",
+      "doubleSided": false,
+      "hasBaseColorTexture": false,
+      "hasNormalTexture": false
+    }
+  ],
+  "validator": {
+    "numErrors": 0,
+    "numWarnings": 0,
+    "numInfos": 3,
+    "numHints": 10,
+    "messages": [
+      {
+        "code": "BUFFER_VIEW_TARGET_MISSING",
+        "message": "bufferView.target should be set for vertex or index data.",
+        "severity": 3,
+        "pointer": "/meshes/0/primitives/0/indices"
+      },
+      {
+        "code": "BUFFER_VIEW_TARGET_MISSING",
+        "message": "bufferView.target should be set for vertex or index data.",
+        "severity": 3,
+        "pointer": "/meshes/1/primitives/0/attributes/POSITION"
+      },
+      {
+        "code": "BUFFER_VIEW_TARGET_MISSING",
+        "message": "bufferView.target should be set for vertex or index data.",
+        "severity": 3,
+        "pointer": "/meshes/1/primitives/0/attributes/NORMAL"
+      },
+      {
+        "code": "BUFFER_VIEW_TARGET_MISSING",
+        "message": "bufferView.target should be set for vertex or index data.",
+        "severity": 3,
+        "pointer": "/meshes/1/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "BUFFER_VIEW_TARGET_MISSING",
+        "message": "bufferView.target should be set for vertex or index data.",
+        "severity": 3,
+        "pointer": "/meshes/1/primitives/0/indices"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/1/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "BUFFER_VIEW_TARGET_MISSING",
+        "message": "bufferView.target should be set for vertex or index data.",
+        "severity": 3,
+        "pointer": "/meshes/2/primitives/0/attributes/POSITION"
+      },
+      {
+        "code": "BUFFER_VIEW_TARGET_MISSING",
+        "message": "bufferView.target should be set for vertex or index data.",
+        "severity": 3,
+        "pointer": "/meshes/2/primitives/0/attributes/NORMAL"
+      },
+      {
+        "code": "BUFFER_VIEW_TARGET_MISSING",
+        "message": "bufferView.target should be set for vertex or index data.",
+        "severity": 3,
+        "pointer": "/meshes/2/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "BUFFER_VIEW_TARGET_MISSING",
+        "message": "bufferView.target should be set for vertex or index data.",
+        "severity": 3,
+        "pointer": "/meshes/2/primitives/0/attributes/COLOR_0"
+      },
+      {
+        "code": "BUFFER_VIEW_TARGET_MISSING",
+        "message": "bufferView.target should be set for vertex or index data.",
+        "severity": 3,
+        "pointer": "/meshes/2/primitives/0/indices"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/accessors/3"
+      },
+      {
+        "code": "IMAGE_NPOT_DIMENSIONS",
+        "message": "Image has non-power-of-two dimensions: 1024x1536.",
+        "severity": 2,
+        "pointer": "/images/1"
+      }
+    ],
+    "truncated": false
+  },
+  "limitations": [
+    "Triangle count sums unique mesh primitives, not all scene instances.",
+    "Asset validation does not establish headset sharpness, performance, scale, or placement acceptance."
+  ]
+}

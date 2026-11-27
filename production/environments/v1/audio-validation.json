@@ -1,0 +1,41 @@
+[
+  {
+    "id": "forest",
+    "file": "forest.wav",
+    "durationSeconds": 24.0,
+    "sampleRate": 24000,
+    "channels": 1,
+    "bits": 16,
+    "peakDbFS": -22.5,
+    "rmsDbFS": -35.75,
+    "seamStep": 0.0139862,
+    "sha256": "5b3cb0d07a44346c1080edbb1e8226a8d9e7bc93f90bc90248d85bd9c3d6e02a",
+    "source": "Deterministic original synthesis; candidate for listening review"
+  },
+  {
+    "id": "lake",
+    "file": "lake.wav",
+    "durationSeconds": 24.0,
+    "sampleRate": 24000,
+    "channels": 1,
+    "bits": 16,
+    "peakDbFS": -23.1,
+    "rmsDbFS": -36.91,
+    "seamStep": 0.0048984,
+    "sha256": "7a9a8ed37577f0a3d9f37fbfb1c287574b08a34ba12d5ea0e4d4c4e48bda54ed",
+    "source": "Deterministic original synthesis; candidate for listening review"
+  },
+  {
+    "id": "study",
+    "file": "study.wav",
+    "durationSeconds": 24.0,
+    "sampleRate": 24000,
+    "channels": 1,
+    "bits": 16,
+    "peakDbFS": -26.94,
+    "rmsDbFS": -40.16,
+    "seamStep": 0.002774,
+    "sha256": "0eade81cca2a980e1a17763fe38f1041549b3c6e870525ac14ff474466be8d36",
+    "source": "Deterministic original synthesis; candidate for listening review"
+  }
+]

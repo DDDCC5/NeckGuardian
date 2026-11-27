@@ -36,6 +36,7 @@ fun TrainingDesignPanel(s:GuardianState,kind:String,failed:Boolean,onLeave:()->U
         Box(Modifier.weight(1f).fillMaxWidth(),contentAlignment=Alignment.BottomCenter) {
             val hint=when {
                 failed -> s.text("场景加载失败，请返回后重试。","Scene loading failed. Return and try again.")
+                !s.modelReady -> s.text("正在准备训练环境…","Preparing the training environment…")
                 s.topper>0 -> s.text("高塔倾倒了，正在保存记录","The tower has toppled. Saving your session")
                 s.countdown>0 -> s.text("准备：${s.countdown}","Ready: ${s.countdown}")
                 !s.pose.fresh -> s.text("正在等待头显追踪…","Waiting for headset tracking…")

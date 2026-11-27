@@ -1,0 +1,45 @@
+{
+  "status": "candidate_ready_for_user_visual_review",
+  "date": "2026-11-27",
+  "method": "Retain source Tripo branch triangles and bark atlas; locally rebuild independent thin alpha-cutout foliage and attached twigs. Direct GLB processing, not an Editor-authored bundle.",
+  "leafCount": 1840,
+  "triangles": 30490,
+  "sha256": "fe997efeb19be48e931f4653fcd249d204d8f230b0e7d6485539798457dbc601",
+  "sourceSha256": "abb35ab0b3d223e32297448cdc17dfbea4d5867b2b1558837727aa9da3d8de1f",
+  "retainedOriginalVertexNormalUvBytes": true,
+  "leafMaterial": {
+    "alphaMode": "MASK",
+    "alphaCutoff": 0.7,
+    "doubleSided": true,
+    "texture": [
+      1024,
+      1536
+    ]
+  },
+  "sourceBarkTexture": [
+    4096,
+    4096
+  ],
+  "validator": {
+    "errors": 0,
+    "warnings": 0
+  },
+  "viewsInspected": [
+    "extracted_branches",
+    "whole_tree_front",
+    "crown_closeup",
+    "whole_tree_back"
+  ],
+  "findings": [
+    "Thin ovate leaf silhouettes and central veins visible in closeup; earlier fused green clumps removed.",
+    "Source trunk architecture remains, with source bark atlas retained and one isolated brown branch connected by a repair twig.",
+    "Crown is airy and somewhat sparser than the approved 2D reference; user should confirm density.",
+    "New twig endpoints are attached to source vertices by construction; this does not establish a watertight union."
+  ],
+  "reproducibleExport": true,
+  "newPaidTripoTasks": 0,
+  "newTripoCredits": 0,
+  "appAssetsReplaced": false,
+  "headsetAcceptance": false,
+  "nativePerformanceVerified": false
+}

@@ -1,0 +1,598 @@
+{
+  "source": "production/environments/lake-v5/NeckGuardian-Lakeside-v5.glb",
+  "sha256": "aabd773f40d448834975931c7e8d941973287cd2c9b9bbfb24638cecd4f08a30",
+  "bytes": 15116716,
+  "meshCount": 116,
+  "primitiveCount": 116,
+  "triangleCount": 122048,
+  "vertices": 134476,
+  "materialCount": 52,
+  "images": [
+    {
+      "index": 0,
+      "mimeType": "image/png",
+      "embedded": true,
+      "externalUri": false,
+      "width": 1254,
+      "height": 1254,
+      "encoding": "PNG"
+    },
+    {
+      "index": 1,
+      "mimeType": "image/png",
+      "embedded": true,
+      "externalUri": false,
+      "width": 256,
+      "height": 256,
+      "encoding": "PNG"
+    },
+    {
+      "index": 2,
+      "mimeType": "image/png",
+      "embedded": true,
+      "externalUri": false,
+      "width": 256,
+      "height": 256,
+      "encoding": "PNG"
+    },
+    {
+      "index": 3,
+      "mimeType": "image/png",
+      "embedded": true,
+      "externalUri": false,
+      "width": 1024,
+      "height": 1536,
+      "encoding": "PNG"
+    },
+    {
+      "index": 4,
+      "mimeType": "image/jpeg",
+      "embedded": true,
+      "externalUri": false,
+      "width": 4096,
+      "height": 4096,
+      "encoding": "JPEG"
+    }
+  ],
+  "externalResources": [],
+  "materials": [
+    {
+      "alphaMode": "OPAQUE",
+      "doubleSided": false,
+      "hasBaseColorTexture": false,
+      "hasNormalTexture": false
+    },
+    {
+      "alphaMode": "OPAQUE",
+      "doubleSided": false,
+      "hasBaseColorTexture": false,
+      "hasNormalTexture": false
+    },
+    {
+      "alphaMode": "OPAQUE",
+      "doubleSided": false,
+      "hasBaseColorTexture": true,
+      "hasNormalTexture": false
+    },
+    {
+      "alphaMode": "BLEND",
+      "doubleSided": false,
+      "hasBaseColorTexture": false,
+      "hasNormalTexture": true
+    },
+    {
+      "alphaMode": "BLEND",
+      "doubleSided": false,
+      "hasBaseColorTexture": false,
+      "hasNormalTexture": false
+    },
+    {
+      "alphaMode": "OPAQUE",
+      "doubleSided": false,
+      "hasBaseColorTexture": false,
+      "hasNormalTexture": false
+    },
+    {
+      "alphaMode": "OPAQUE",
+      "doubleSided": false,
+      "hasBaseColorTexture": true,
+      "hasNormalTexture": false
+    },
+    {
+      "alphaMode": "OPAQUE",
+      "doubleSided": false,
+      "hasBaseColorTexture": true,
+      "hasNormalTexture": false
+    },
+    {
+      "alphaMode": "OPAQUE",
+      "doubleSided": false,
+      "hasBaseColorTexture": true,
+      "hasNormalTexture": false
+    },
+    {
+      "alphaMode": "OPAQUE",
+      "doubleSided": false,
+      "hasBaseColorTexture": true,
+      "hasNormalTexture": false
+    },
+    {
+      "alphaMode": "OPAQUE",
+      "doubleSided": false,
+      "hasBaseColorTexture": true,
+      "hasNormalTexture": false
+    },
+    {
+      "alphaMode": "OPAQUE",
+      "doubleSided": false,
+      "hasBaseColorTexture": true,
+      "hasNormalTexture": false
+    },
+    {
+      "alphaMode": "OPAQUE",
+      "doubleSided": false,
+      "hasBaseColorTexture": true,
+      "hasNormalTexture": false
+    },
+    {
+      "alphaMode": "OPAQUE",
+      "doubleSided": false,
+      "hasBaseColorTexture": true,
+      "hasNormalTexture": false
+    },
+    {
+      "alphaMode": "OPAQUE",
+      "doubleSided": false,
+      "hasBaseColorTexture": true,
+      "hasNormalTexture": false
+    },
+    {
+      "alphaMode": "OPAQUE",
+      "doubleSided": false,
+      "hasBaseColorTexture": true,
+      "hasNormalTexture": false
+    },
+    {
+      "alphaMode": "OPAQUE",
+      "doubleSided": false,
+      "hasBaseColorTexture": true,
+      "hasNormalTexture": false
+    },
+    {
+      "alphaMode": "OPAQUE",
+      "doubleSided": false,
+      "hasBaseColorTexture": true,
+      "hasNormalTexture": false
+    },
+    {
+      "alphaMode": "OPAQUE",
+      "doubleSided": false,
+      "hasBaseColorTexture": true,
+      "hasNormalTexture": false
+    },
+    {
+      "alphaMode": "OPAQUE",
+      "doubleSided": false,
+      "hasBaseColorTexture": true,
+      "hasNormalTexture": false
+    },
+    {
+      "alphaMode": "OPAQUE",
+      "doubleSided": false,
+      "hasBaseColorTexture": true,
+      "hasNormalTexture": false
+    },
+    {
+      "alphaMode": "OPAQUE",
+      "doubleSided": false,
+      "hasBaseColorTexture": true,
+      "hasNormalTexture": false
+    },
+    {
+      "alphaMode": "OPAQUE",
+      "doubleSided": false,
+      "hasBaseColorTexture": true,
+      "hasNormalTexture": false
+    },
+    {
+      "alphaMode": "OPAQUE",
+      "doubleSided": false,
+      "hasBaseColorTexture": true,
+      "hasNormalTexture": false
+    },
+    {
+      "alphaMode": "OPAQUE",
+      "doubleSided": false,
+      "hasBaseColorTexture": true,
+      "hasNormalTexture": false
+    },
+    {
+      "alphaMode": "OPAQUE",
+      "doubleSided": false,
+      "hasBaseColorTexture": true,
+      "hasNormalTexture": false
+    },
+    {
+      "alphaMode": "OPAQUE",
+      "doubleSided": false,
+      "hasBaseColorTexture": true,
+      "hasNormalTexture": false
+    },
+    {
+      "alphaMode": "OPAQUE",
+      "doubleSided": false,
+      "hasBaseColorTexture": true,
+      "hasNormalTexture": false
+    },
+    {
+      "alphaMode": "OPAQUE",
+      "doubleSided": false,
+      "hasBaseColorTexture": true,
+      "hasNormalTexture": false
+    },
+    {
+      "alphaMode": "OPAQUE",
+      "doubleSided": false,
+      "hasBaseColorTexture": true,
+      "hasNormalTexture": false
+    },
+    {
+      "alphaMode": "OPAQUE",
+      "doubleSided": false,
+      "hasBaseColorTexture": true,
+      "hasNormalTexture": false
+    },
+    {
+      "alphaMode": "OPAQUE",
+      "doubleSided": false,
+      "hasBaseColorTexture": true,
+      "hasNormalTexture": false
+    },
+    {
+      "alphaMode": "OPAQUE",
+      "doubleSided": false,
+      "hasBaseColorTexture": true,
+      "hasNormalTexture": false
+    },
+    {
+      "alphaMode": "OPAQUE",
+      "doubleSided": false,
+      "hasBaseColorTexture": true,
+      "hasNormalTexture": false
+    },
+    {
+      "alphaMode": "OPAQUE",
+      "doubleSided": false,
+      "hasBaseColorTexture": true,
+      "hasNormalTexture": false
+    },
+    {
+      "alphaMode": "OPAQUE",
+      "doubleSided": false,
+      "hasBaseColorTexture": true,
+      "hasNormalTexture": false
+    },
+    {
+      "alphaMode": "OPAQUE",
+      "doubleSided": false,
+      "hasBaseColorTexture": true,
+      "hasNormalTexture": false
+    },
+    {
+      "alphaMode": "OPAQUE",
+      "doubleSided": false,
+      "hasBaseColorTexture": true,
+      "hasNormalTexture": false
+    },
+    {
+      "alphaMode": "OPAQUE",
+      "doubleSided": false,
+      "hasBaseColorTexture": true,
+      "hasNormalTexture": false
+    },
+    {
+      "alphaMode": "OPAQUE",
+      "doubleSided": false,
+      "hasBaseColorTexture": true,
+      "hasNormalTexture": false
+    },
+    {
+      "alphaMode": "OPAQUE",
+      "doubleSided": false,
+      "hasBaseColorTexture": true,
+      "hasNormalTexture": false
+    },
+    {
+      "alphaMode": "OPAQUE",
+      "doubleSided": false,
+      "hasBaseColorTexture": true,
+      "hasNormalTexture": false
+    },
+    {
+      "alphaMode": "OPAQUE",
+      "doubleSided": false,
+      "hasBaseColorTexture": true,
+      "hasNormalTexture": false
+    },
+    {
+      "alphaMode": "OPAQUE",
+      "doubleSided": false,
+      "hasBaseColorTexture": true,
+      "hasNormalTexture": false
+    },
+    {
+      "alphaMode": "OPAQUE",
+      "doubleSided": false,
+      "hasBaseColorTexture": true,
+      "hasNormalTexture": false
+    },
+    {
+      "alphaMode": "OPAQUE",
+      "doubleSided": false,
+      "hasBaseColorTexture": true,
+      "hasNormalTexture": false
+    },
+    {
+      "alphaMode": "OPAQUE",
+      "doubleSided": false,
+      "hasBaseColorTexture": false,
+      "hasNormalTexture": false
+    },
+    {
+      "alphaMode": "OPAQUE",
+      "doubleSided": true,
+      "hasBaseColorTexture": false,
+      "hasNormalTexture": false
+    },
+    {
+      "alphaMode": "OPAQUE",
+      "doubleSided": true,
+      "hasBaseColorTexture": false,
+      "hasNormalTexture": false
+    },
+    {
+      "name": "NaturalThinLeaves",
+      "alphaMode": "MASK",
+      "doubleSided": true,
+      "hasBaseColorTexture": true,
+      "hasNormalTexture": false
+    },
+    {
+      "name": "tripo_material_1e29b9f5-7970-4b85-b42c-947a6cc8e239",
+      "alphaMode": "OPAQUE",
+      "doubleSided": true,
+      "hasBaseColorTexture": true,
+      "hasNormalTexture": false
+    },
+    {
+      "name": "ConnectedLeafTwigs",
+      "alphaMode": "OPAQUE",
+      "doubleSided": false,
+      "hasBaseColorTexture": false,
+      "hasNormalTexture": false
+    }
+  ],
+  "validator": {
+    "numErrors": 0,
+    "numWarnings": 0,
+    "numInfos": 35,
+    "numHints": 0,
+    "messages": [
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/0/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/1/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/4/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/5/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/6/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/7/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/8/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/9/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/10/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/11/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/12/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/13/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/83/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/84/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/85/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/86/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/91/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/92/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/96/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/97/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/98/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/99/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/100/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/101/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/102/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/103/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/104/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/105/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/106/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/107/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/108/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/109/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/114/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "IMAGE_NPOT_DIMENSIONS",
+        "message": "Image has non-power-of-two dimensions: 1254x1254.",
+        "severity": 2,
+        "pointer": "/images/0"
+      },
+      {
+        "code": "IMAGE_NPOT_DIMENSIONS",
+        "message": "Image has non-power-of-two dimensions: 1024x1536.",
+        "severity": 2,
+        "pointer": "/images/3"
+      }
+    ],
+    "truncated": false
+  },
+  "limitations": [
+    "Triangle count sums unique mesh primitives, not all scene instances.",
+    "Asset validation does not establish headset sharpness, performance, scale, or placement acceptance."
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "source": "production/environments/v2/models/natural-tree-v3/tripo-out/neckguardian-natural-tree-v3-1e29b9f5/model.glb",
+  "sha256": "abb35ab0b3d223e32297448cdc17dfbea4d5867b2b1558837727aa9da3d8de1f",
+  "bytes": 4739368,
+  "meshCount": 1,
+  "primitiveCount": 1,
+  "triangleCount": 20170,
+  "vertices": 36637,
+  "materialCount": 1,
+  "images": [
+    {
+      "index": 0,
+      "mimeType": "image/jpeg",
+      "embedded": true,
+      "externalUri": false,
+      "width": 4096,
+      "height": 4096,
+      "encoding": "JPEG"
+    }
+  ],
+  "externalResources": [],
+  "materials": [
+    {
+      "name": "tripo_material_1e29b9f5-7970-4b85-b42c-947a6cc8e239",
+      "alphaMode": "OPAQUE",
+      "doubleSided": true,
+      "hasBaseColorTexture": true,
+      "hasNormalTexture": false
+    }
+  ],
+  "validator": {
+    "numErrors": 0,
+    "numWarnings": 0,
+    "numInfos": 0,
+    "numHints": 0,
+    "messages": [],
+    "truncated": false
+  },
+  "limitations": [
+    "Triangle count sums unique mesh primitives, not all scene instances.",
+    "Asset validation does not establish headset sharpness, performance, scale, or placement acceptance."
+  ]
+}

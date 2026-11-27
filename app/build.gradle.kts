@@ -12,8 +12,8 @@ android {
         applicationId = "com.example.neckguardian"
         minSdk = 35
         targetSdk = 35
-        versionCode = 8
-        versionName = "1.7"
+        versionCode = 10
+        versionName = "1.8.1"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         ndk { abiFilters.add("arm64-v8a") }

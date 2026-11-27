@@ -1,0 +1,36 @@
+{
+  "date": "2026-11-27",
+  "taskId": "1e29b9f5-7970-4b85-b42c-947a6cc8e239",
+  "provider": "official_tripo_cli_overseas",
+  "model": "v3.1-20260211",
+  "creditsConsumed": 70,
+  "status": "generated_visual_review_needs_foliage_rework",
+  "sha256": "abb35ab0b3d223e32297448cdc17dfbea4d5867b2b1558837727aa9da3d8de1f",
+  "triangles": 20170,
+  "bytes": 4739368,
+  "embeddedTexture": [
+    4096,
+    4096
+  ],
+  "validatorErrors": 0,
+  "validatorWarnings": 0,
+  "appReplaced": false,
+  "headsetAcceptance": false,
+  "review": {
+    "views": [
+      "provider_preview",
+      "web_whole_tree",
+      "web_crown_closeup",
+      "web_trunk_closeup"
+    ],
+    "findings": [
+      "Trunk branching and exposed roots reflect the approved reference more closely than samplev2.",
+      "Leaf groups remain fused into large faceted canopy plates; individual thin elliptical leaves from the reference are not faithfully reconstructed.",
+      "Bark texture is more detailed than samplev2 but still soft at extreme close range.",
+      "One mesh and material; no external GLB resources, validation passes.",
+      "Technical validity does not establish the requested visual quality."
+    ],
+    "recommendation": "Retain useful trunk/branch structure and rebuild foliage as separate thin leaf meshes or masked foliage, rather than automatically paying for another whole-tree generation."
+  },
+  "automaticPaidRetries": 0
+}

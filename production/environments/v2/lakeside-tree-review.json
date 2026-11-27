@@ -1,0 +1,46 @@
+{
+  "date": "2026-11-27",
+  "provider": "Tripo official CLI overseas",
+  "model": "v3.1-20260211",
+  "taskId": "722ceeab-f64b-4ea3-adba-66834e111969",
+  "creditsConsumed": 60,
+  "status": "rejected_by_user_leaf_shape",
+  "meshSha256": "a260e6779b66ad82233e0fbffe2d4ff2d5e3d665967ff1a085b6ac55aac9c5f2",
+  "technical": {
+    "triangles": 12828,
+    "embeddedTexture": [
+      4096,
+      4096
+    ],
+    "fileBytes": 4245072,
+    "validatorErrors": 0,
+    "validatorWarnings": 0,
+    "externalResources": false
+  },
+  "visualReview": {
+    "viewsInspected": [
+      "provider_preview",
+      "interactive_whole_tree",
+      "interactive_trunk_closeup",
+      "interactive_crown_closeup"
+    ],
+    "findings": [
+      "Freestanding tree with intact trunk, exposed roots, branches and a dense green canopy.",
+      "Strongly stylized chunky/star-shaped leaf clusters; less naturalistic than prior photographic panorama candidates.",
+      "Bark texture is soft at close range despite4096px atlas; atlas size does not prove crisp local texel density.",
+      "Use as a candidate mid-distance decorative prop only until headset inspection."
+    ],
+    "notVerified": [
+      "headset sharpness",
+      "runtime scale",
+      "PICO frame rate",
+      "complete360scene composition"
+    ],
+    "appReplaced": false
+  },
+  "interactivePreview": "production/preview/tripo-tree-v2.html",
+  "paidTasksSubmitted": 1,
+  "automaticRerolls": 0,
+  "userFeedback": "不好看，这不是树叶的形状",
+  "nextStep": "Prepare natural thin-leaf visual reference before proposing another paid Tripo task."
+}

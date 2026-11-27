@@ -1,0 +1,46 @@
+{
+  "status": "model_preview_ready_native_pending",
+  "date": "2026-11-27",
+  "preview": "http://127.0.0.1:8781/production/preview/environments-v6.html",
+  "newPaidTripoTasks": 0,
+  "newTripoCredits": 0,
+  "models": {
+    "lake": {
+      "sha256": "475d58cebd36c7265392a8a92a1b7f108e8259d4813a211029e118e9e1de9991",
+      "bytes": 20634828,
+      "materialCount": 52,
+      "triangleCount": 164500,
+      "instancedTriangles": 606350,
+      "meshInstances": 162,
+      "selectedPropAabbClear": true,
+      "validatorErrors": 0,
+      "validatorWarnings": 0,
+      "leafCutoutRequired": false
+    },
+    "forest": {
+      "sha256": "b8b08636246746325bb0485482a373c453ebb7c969dfd5209c612d22078eb002",
+      "bytes": 18968112,
+      "materialCount": 9,
+      "triangleCount": 110602,
+      "instancedTriangles": 551792,
+      "meshInstances": 73,
+      "selectedPropAabbClear": true,
+      "validatorErrors": 0,
+      "validatorWarnings": 0,
+      "leafCutoutRequired": false
+    },
+    "study": {
+      "sha256": "81c7e73329bd92fdac620b4c81d09d4038051264cd144201dd93d6ef0ff96ae1",
+      "bytes": 12576364,
+      "materialCount": 20,
+      "triangleCount": 32190,
+      "instancedTriangles": 46800,
+      "meshInstances": 256,
+      "selectedPropAabbClear": true,
+      "validatorErrors": 0,
+      "validatorWarnings": 0,
+      "leafCutoutRequired": false
+    }
+  },
+  "nativeVerificationDeferredByUser": true
+}

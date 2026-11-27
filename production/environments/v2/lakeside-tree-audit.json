@@ -1,0 +1,43 @@
+{
+  "source": "production/environments/v2/models/lakeside-tree/tripo-out/neckguardian-lakeside-tree-v2-722ceeab/model.glb",
+  "sha256": "a260e6779b66ad82233e0fbffe2d4ff2d5e3d665967ff1a085b6ac55aac9c5f2",
+  "bytes": 4245072,
+  "meshCount": 1,
+  "primitiveCount": 1,
+  "triangleCount": 12828,
+  "vertices": 26923,
+  "materialCount": 1,
+  "images": [
+    {
+      "index": 0,
+      "mimeType": "image/jpeg",
+      "embedded": true,
+      "externalUri": false,
+      "width": 4096,
+      "height": 4096,
+      "encoding": "JPEG"
+    }
+  ],
+  "externalResources": [],
+  "materials": [
+    {
+      "name": "tripo_material_722ceeab-f64b-4ea3-adba-66834e111969",
+      "alphaMode": "OPAQUE",
+      "doubleSided": true,
+      "hasBaseColorTexture": true,
+      "hasNormalTexture": false
+    }
+  ],
+  "validator": {
+    "numErrors": 0,
+    "numWarnings": 0,
+    "numInfos": 0,
+    "numHints": 0,
+    "messages": [],
+    "truncated": false
+  },
+  "limitations": [
+    "Triangle count sums unique mesh primitives, not all scene instances.",
+    "Asset validation does not establish headset sharpness, performance, scale, or placement acceptance."
+  ]
+}

@@ -12,6 +12,9 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.draw.clip
+import com.example.neckguardian.domain.TrainingEnvironment
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
@@ -139,9 +142,10 @@ fun HomeVolume(state: GuardianState) {
             "towerSetup","flightSetup","extensionSetup","lateralSetup" -> Setup(state,Modifier.weight(1f)) {
                 if(state.inStage) return@Setup
                 state.stageKind=state.page.removeSuffix("Setup")
+                state.prepareEnvironment(state.stageKind)
                 state.inStage=true
                 scope.launch {
-                    when(navigator.openStage("GuardianTrainingStage",StageStyle.Mixed)) {
+                    when(navigator.openStage("GuardianTrainingStage",if(state.stageEnvironment==TrainingEnvironment.REAL) StageStyle.Mixed else StageStyle.Full)) {
                         is OpenStageResult.Allowed -> {
                             // The Stage minimizes this window after receiving the first real pose.
                             android.util.Log.i("NeckGuardian","Full Space entry allowed: ${state.stageKind}")
@@ -229,6 +233,7 @@ private fun Questionnaire(s:GuardianState) {
 private fun Setup(s:GuardianState,modifier:Modifier,onEnterStage:()->Unit) {
     val kind=s.page.removeSuffix("Setup")
     if(kind=="tower") { TowerSetup(s,modifier,onEnterStage);return }
+    if(kind=="flight") { FlightEnvironmentSetup(s,modifier,onEnterStage);return }
     Column(modifier,verticalArrangement=Arrangement.spacedBy(12.dp)) {
         Row(Modifier.weight(1f),horizontalArrangement=Arrangement.spacedBy(16.dp)) {
             // design-style: design-surface warm-setup-instructions
@@ -246,6 +251,52 @@ private fun Setup(s:GuardianState,modifier:Modifier,onEnterStage:()->Unit) {
         SetupActions(s,kind,onEnterStage)
         Note(s)
     }
+}
+
+/** Approved pre-training environment choice. The shared footer remains unchanged. */
+@Composable
+private fun FlightEnvironmentSetup(s:GuardianState,modifier:Modifier,onEnterStage:()->Unit) {
+    Column(modifier.fillMaxWidth(),verticalArrangement=Arrangement.spacedBy(12.dp)) {
+        Column(Modifier.weight(1f).verticalScroll(rememberScrollState()),verticalArrangement=Arrangement.spacedBy(12.dp)) {
+            // design-style: design-surface flight-hero
+            Row(Modifier.fillMaxWidth().height(126.dp).background(GuardianColors.health,RoundedCornerShape(24.dp)).padding(16.dp),verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(16.dp)) {
+                Column(Modifier.weight(1f),verticalArrangement=Arrangement.spacedBy(8.dp)) {
+                    Text(s.text("选择喜欢的风景，轻缓开始","Choose your scenery. Begin gently."),style=PicoTheme.typography.titleMedium,fontWeight=FontWeight.Bold,color=GuardianColors.ink)
+                    Text(s.text("坐稳并放松肩膀，轻轻向左或右侧倾来转向。","Sit comfortably, relax your shoulders and lean gently to steer."),style=PicoTheme.typography.bodyMedium,color=GuardianColors.ink)
+                    Text(s.text("开始时目视前方，保持自然姿势进行校准。","Look straight ahead in a natural posture for calibration."),style=PicoTheme.typography.bodySmall,color=GuardianColors.sageText)
+                }
+                ScenePanel(s,"flight",Modifier.width(176.dp).fillMaxHeight())
+            }
+            Text(s.text("训练环境","Training environment"),style=PicoTheme.typography.titleMedium,fontWeight=FontWeight.Bold)
+            Row(Modifier.fillMaxWidth(),horizontalArrangement=Arrangement.spacedBy(12.dp)) {
+                TrainingEnvironment.entries.forEach { environment ->
+                    val selected=s.environmentSettings.environment==environment
+                    // design-style: design-surface tile-forest
+                    Column(Modifier.weight(1f).background(if(selected) GuardianColors.selected else GuardianColors.health,RoundedCornerShape(16.dp)).padding(8.dp),verticalArrangement=Arrangement.spacedBy(8.dp)) {
+                        val image=when(environment) {TrainingEnvironment.REAL->R.drawable.app_icon;TrainingEnvironment.FOREST->R.drawable.environment_forest;TrainingEnvironment.LAKE->R.drawable.environment_lake;TrainingEnvironment.STUDY->R.drawable.environment_study}
+                        Image(painterResource(image),null,Modifier.fillMaxWidth().height(72.dp).clip(RoundedCornerShape(12.dp)),contentScale=if(environment==TrainingEnvironment.REAL) ContentScale.Fit else ContentScale.Crop)
+                        Option(selected=selected,onSelectChange={s.chooseEnvironment(environment)},enabled=!s.inStage,modifier=Modifier.fillMaxWidth().heightIn(min=48.dp).semantics {testTag="environment.${environment.id}"}) {
+                            Text(environmentName(s,environment),style=PicoTheme.typography.bodyMedium)
+                        }
+                    }
+                }
+            }
+            ListItem(
+                headlineContent={Text(s.text("环境音","Ambient sound"))},
+                supportingContent={Text(s.text("训练时播放所选环境的声音","Play the selected soundscape during training"))},
+                trailingContent={Switch(checked=s.environmentSettings.ambienceEnabled,onCheckedChange={s.chooseAmbience(it)},enabled=s.environmentSettings.environment!=TrainingEnvironment.REAL && !s.inStage,modifier=Modifier.semantics {contentDescription=s.text("环境音","Ambient sound");testTag="environment.ambience"})},
+                padding=PaddingValues(0.dp),
+            )
+        }
+        SetupActions(s,"flight",onEnterStage)
+        Note(s)
+    }
+}
+private fun environmentName(s:GuardianState,environment:TrainingEnvironment)=when(environment) {
+    TrainingEnvironment.REAL->s.text("真实空间","Real space")
+    TrainingEnvironment.FOREST->s.text("林间晨光","Woodland morning")
+    TrainingEnvironment.LAKE->s.text("湖畔薄雾","Misty lakeside")
+    TrainingEnvironment.STUDY->s.text("暖阳书房","Sunlit study")
 }
 
 /** One shared footer fixes wording, order, alignment and target sizes across all four setup pages. */

@@ -1,0 +1,12 @@
+{
+  "visibleMeshNodes": 162,
+  "instancedTriangles": 457178,
+  "uniquePrimitiveTriangles": 122048,
+  "bytes": 15116716,
+  "extensionsUsed": [
+    "KHR_materials_unlit",
+    "KHR_texture_transform"
+  ],
+  "headsetPerformanceVerified": false,
+  "sha256": "aabd773f40d448834975931c7e8d941973287cd2c9b9bbfb24638cecd4f08a30"
+}

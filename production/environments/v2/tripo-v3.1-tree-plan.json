@@ -1,0 +1,59 @@
+{
+  "command": [
+    "tripo",
+    "make",
+    "A single mature deciduous oak tree for a calming VR lakeside garden. Freestanding complete tree, visible warm brown bark and natural branching, softly rounded dense sage-green canopy. Clear modeled bark and foliage clusters, crisp clean silhouette and refined textured materials at close viewing distance. Solid clustered foliage, no transparent leaf cards, no terrain, no ground slab, no scenery background, no text or people. Gentle realistic stylization, reusable 360-degree game prop.",
+    "-p",
+    "face_limit=12000",
+    "-p",
+    "texture_quality=detailed",
+    "--no-open",
+    "--json",
+    "--out",
+    "production/environments/v2/models/lakeside-tree",
+    "--name",
+    "neckguardian-lakeside-tree-v2",
+    "--model",
+    "tripo-v3.1",
+    "-p",
+    "geometry_quality=detailed",
+    "-p",
+    "smart_low_poly=true"
+  ],
+  "plan": {
+    "dry_run": true,
+    "valid": true,
+    "input": "A single mature deciduous oak tree for a calming VR lakeside garden. Freestanding complete tree, visible warm brown bark and natural branching, softly rounded dense sage-green canopy. Clear modeled bark and foliage clusters, crisp clean silhouette and refined textured materials at close viewing distance. Solid clustered foliage, no transparent leaf cards, no terrain, no ground slab, no scenery background, no text or people. Gentle realistic stylization, reusable 360-degree game prop.",
+    "model": "v3.1-20260211",
+    "model_reason": "explicit --model",
+    "steps": [
+      {
+        "name": "text-to-model",
+        "endpoint": "/v3/generation/text-to-model",
+        "task_type": "text_to_model",
+        "payload": {
+          "prompt": "A single mature deciduous oak tree for a calming VR lakeside garden. Freestanding complete tree, visible warm brown bark and natural branching, softly rounded dense sage-green canopy. Clear modeled bark and foliage clusters, crisp clean silhouette and refined textured materials at close viewing distance. Solid clustered foliage, no transparent leaf cards, no terrain, no ground slab, no scenery background, no text or people. Gentle realistic stylization, reusable 360-degree game prop.",
+          "face_limit": 12000,
+          "texture_quality": "detailed",
+          "geometry_quality": "detailed",
+          "smart_low_poly": true,
+          "pbr": false,
+          "model": "v3.1-20260211"
+        }
+      }
+    ],
+    "pending_uploads": [],
+    "deliverables": [
+      "GLB"
+    ],
+    "candidates": 1,
+    "warnings": [],
+    "errors": [],
+    "generation_credits_estimate": 60,
+    "cost_notes": [
+      "estimated generation cost: 60 credits (official list price)",
+      "texture_quality detailed: higher price tier",
+      "geometry detailed (Ultra): extra HD credit"
+    ]
+  }
+}

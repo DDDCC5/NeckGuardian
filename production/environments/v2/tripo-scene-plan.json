@@ -1,0 +1,148 @@
+{
+  "status": "thin_foliage_v4_candidate_ready",
+  "requestedProvider": "tripo3d",
+  "strategy": "Independent real 3D props; assemble at measured scale in Spatial Editor, keep clear central flight corridor and seated user area. Existing low-resolution panorama is not final immersive environment. Generate lake pilot first, review, then extend other themes.",
+  "constraints": {
+    "package": "com.example.neckguardian",
+    "preserveExistingTrainingModels": true,
+    "preserveScoring": true,
+    "theme": "warm gentle healing, crisp silhouettes, subtle physically based materials",
+    "performance": "reuse prop instances, control visible triangle count and materials; validate on headset rather than claim frame rate from file size",
+    "unresolved": "Large continuous water/terrain and distant scenery need editor assembly/material design; Tripo props alone do not establish a complete 360 environment."
+  },
+  "assets": [
+    {
+      "theme": "lake",
+      "id": "lake_tree",
+      "prompt": "Standalone mature oak, sage-green solid clustered foliage, modeled branches and warm bark; no alpha billboard leaves",
+      "targetFaces": 12000,
+      "provider": "official_tripo_cli_ov",
+      "pbr": false,
+      "status": "not_generated"
+    },
+    {
+      "theme": "lake",
+      "id": "lake_deck",
+      "prompt": "Modular warm timber viewing platform with short rear rail, broad smooth boards, gently rounded edges; open front, no lake or sky",
+      "targetFaces": 10000,
+      "provider": "official_tripo_cli_ov",
+      "pbr": false,
+      "status": "not_generated"
+    },
+    {
+      "theme": "lake",
+      "id": "lake_rocks",
+      "prompt": "Small natural smooth granite rock grouping with subtle moss patches, warm gray stone, stable ground contact",
+      "targetFaces": 7000,
+      "provider": "official_tripo_cli_ov",
+      "pbr": false,
+      "status": "not_generated"
+    },
+    {
+      "theme": "lake",
+      "id": "lake_garden_bench",
+      "prompt": "Standalone comfortable timber garden bench, rounded armrests and natural wood grain, warm soft style",
+      "targetFaces": 9000,
+      "provider": "official_tripo_cli_ov",
+      "pbr": false,
+      "status": "not_generated"
+    },
+    {
+      "theme": "forest",
+      "id": "forest_tree",
+      "prompt": "Freestanding broad canopy forest tree with crisp sculpted trunk and dense soft foliage",
+      "targetFaces": 12000,
+      "provider": "official_tripo_cli_ov",
+      "pbr": false,
+      "status": "not_generated"
+    },
+    {
+      "theme": "forest",
+      "id": "forest_fern_cluster",
+      "prompt": "Compact freestanding woodland fern cluster with modeled fronds and no textured cards",
+      "targetFaces": 6000,
+      "provider": "official_tripo_cli_ov",
+      "pbr": false,
+      "status": "not_generated"
+    },
+    {
+      "theme": "study",
+      "id": "study_bookshelf",
+      "prompt": "Freestanding warm oak bookshelf with neatly grouped books and soft rounded corners, no readable lettering",
+      "targetFaces": 10000,
+      "provider": "official_tripo_cli_ov",
+      "pbr": false,
+      "status": "not_generated"
+    },
+    {
+      "theme": "study",
+      "id": "study_armchair",
+      "prompt": "Cozy freestanding linen armchair with wooden legs and visible fabric texture, cream and sage",
+      "targetFaces": 10000,
+      "provider": "official_tripo_cli_ov",
+      "pbr": false,
+      "status": "not_generated"
+    },
+    {
+      "theme": "study",
+      "id": "study_side_table_lamp",
+      "prompt": "Warm oak round side table with ceramic warm lamp, clearly separated solid pieces, no glowing halo geometry",
+      "targetFaces": 9000,
+      "provider": "official_tripo_cli_ov",
+      "pbr": false,
+      "status": "not_generated"
+    }
+  ],
+  "authentication": "Existing official CLI default overseas profile reused; doctor passed. No key copied or exposed.",
+  "sampleOptions": [
+    {
+      "model": "v3.1-20260211",
+      "geometry": "detailed",
+      "textures": "detailed",
+      "estimatedCredits": 60
+    },
+    {
+      "model": "P2-20260801",
+      "textures": "detailed",
+      "estimatedCredits": 120
+    }
+  ],
+  "selectedSampleModel": "v3.1-20260211",
+  "sampleEstimatedCredits": 60,
+  "sampleTaskId": "722ceeab-f64b-4ea3-adba-66834e111969",
+  "authorization": "User accepted recommended H3.1 one-tree sample after explanation on2026-11-27. Other assets are not yet authorized for paid submission.",
+  "sampleCreditsConsumed": 60,
+  "sampleAsset": {
+    "model": "production/environments/v2/models/lakeside-tree/tripo-out/neckguardian-lakeside-tree-v2-722ceeab/model.glb",
+    "sha256": "a260e6779b66ad82233e0fbffe2d4ff2d5e3d665967ff1a085b6ac55aac9c5f2",
+    "triangles": 12828,
+    "texture": [
+      4096,
+      4096
+    ],
+    "validatorErrors": 0,
+    "validatorWarnings": 0,
+    "headsetAcceptance": false
+  },
+  "nextReference": "production/environments/v2/references/natural-thin-leaf-tree-v3.png",
+  "nextPaidTaskSubmitted": false,
+  "currentSample": {
+    "taskId": "1e29b9f5-7970-4b85-b42c-947a6cc8e239",
+    "model": "v3.1-20260211",
+    "estimatedCredits": 70,
+    "input": "references/natural-thin-leaf-tree-v3.png",
+    "targetFaces": 20000,
+    "status": "completed_needs_foliage_rework",
+    "paidRetriesAuthorized": false,
+    "actualCredits": 70,
+    "reviewFile": "natural-tree-v3-review.json"
+  },
+  "localRebuild": {
+    "model": "foliage-rebuild/natural-tree-thin-foliage-v4.glb",
+    "leafCount": 1840,
+    "triangles": 30490,
+    "newTripoCredits": 0,
+    "appReplaced": false,
+    "userVisualAcceptance": "pending"
+  }
+}
